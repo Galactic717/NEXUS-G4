@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  nexus_g4:
+    build: .
+    container_name: nexus_g4_server
+    ports:
+      - "8000:8000"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+      - DEBUG=False
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
+    # If Ollama is running on the host machine, you may need to use host network or specify host IP
+    # extra_hosts:
+    #   - "host.docker.internal:host-gateway"
