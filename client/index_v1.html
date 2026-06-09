@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Розумний Пошук | Веб-платформа у сфері ШІ</title>
+    
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons for premium modern look -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom styling -->
+    <link rel="stylesheet" href="/static/index.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon"></div>
+                    <h2>AI Search</h2>
+                </div>
+            </div>
+            
+            <div class="sidebar-settings">
+                <h3>Налаштування пошуку</h3>
+                
+                <div class="setting-group">
+                    <label for="search-depth">Глибина дослідження</label>
+                    <div class="toggle-container">
+                        <button class="depth-btn active" data-depth="0">
+                            <i data-lucide="zap"></i>
+                            <span>Швидкий</span>
+                        </button>
+                        <button class="depth-btn" data-depth="2">
+                            <i data-lucide="search-code"></i>
+                            <span>Глибокий</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="search-only-check">
+                        <span class="custom-checkbox"></span>
+                        <span>Тільки пошук джерел</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="sidebar-history">
+                <div class="history-header">
+                    <h3>Історія пошуку</h3>
+                    <span class="history-count" id="history-count">0</span>
+                </div>
+                <div class="history-list" id="history-list">
+                    <!-- Завантажиться динамічно -->
+                    <div class="history-empty">
+                        <i data-lucide="history"></i>
+                        <p>Історія запитів порожня</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <p>КНУ імені Тараса Шевченка &copy; 2026</p>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT AREA -->
+        <main class="main-content">
+            
+            <!-- Welcome Header -->
+            <header class="app-header">
+                <div class="header-info">
+                    <h1>Знайдіть актуальну інформацію про AI</h1>
+                    <p>Розумний ітеративний пошук в Інтернеті з генерацією детальних звітів та цитуванням джерел</p>
+                </div>
+            </header>
+
+            <!-- Search Area -->
+            <section class="search-section">
+                <div class="search-bar-container">
+                    <i data-lucide="search" class="search-input-icon"></i>
+                    <textarea 
+                        id="search-input" 
+                        placeholder="Введіть ваш запит... (наприклад, 'Які останні оновлення щодо мов програмування для AI?')"
+                        rows="1"
+                    ></textarea>
+                    <button id="search-submit" class="search-submit-btn">
+                        <i data-lucide="arrow-right"></i>
+                    </button>
+                </div>
+                <div class="search-suggestions">
+                    <span class="suggest-tag">Mojo 2026</span>
+                    <span class="suggest-tag">Агенти кодування AI</span>
+                    <span class="suggest-tag">GPT-5 чутки</span>
+                    <span class="suggest-tag">Нові моделі Gemini</span>
+                </div>
+            </section>
+
+            <!-- Status Indicator / Spinner during research -->
+            <section class="status-section hidden" id="status-section">
+                <div class="loader-container">
+                    <div class="glow-spinner"></div>
+                    <div class="loader-content">
+                        <h4 id="status-title">Ініціалізація дослідження...</h4>
+                        <p id="status-desc">Підготовка запиту та запуск пошукових систем</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="status-progress" style="width: 15%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Panel -->
+            <section class="results-section hidden" id="results-section">
+                
+                <!-- Report Container -->
+                <div class="result-card report-card">
+                    <div class="card-header">
+                        <div class="header-title">
+                            <i data-lucide="book-open"></i>
+                            <h3>Згенерований AI звіт</h3>
+                        </div>
+                        <div class="header-actions">
+                            <button class="action-btn" id="btn-copy" title="Копіювати звіт">
+                                <i data-lucide="copy"></i>
+                                <span>Копіювати</span>
+                            </button>
+                            <button class="action-btn" id="btn-download" title="Експортувати в Markdown">
+                                <i data-lucide="download"></i>
+                                <span>Зберегти</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="report-meta">
+                        <span class="meta-item">
+                            <i data-lucide="calendar"></i>
+                            <span id="report-date">26 травня, 2026</span>
+                        </span>
+                        <span class="meta-item">
+                            <i data-lucide="link"></i>
+                            <span id="report-sources-count">0 джерел використано</span>
+                        </span>
+                    </div>
+
+                    <hr class="divider">
+
+                    <!-- AI Answer (markdown transformed) -->
+                    <div class="report-body markdown-content" id="report-body">
+                        <!-- Наповнюється JS -->
+                    </div>
+                </div>
+
+                <!-- Sources Container -->
+                <div class="sources-container-header">
+                    <i data-lucide="globe"></i>
+                    <h3>Використані веб-джерела</h3>
+                </div>
+                
+                <div class="sources-grid" id="sources-grid">
+                    <!-- Завантажиться динамічно як картки -->
+                </div>
+
+            </section>
+
+            <!-- Empty / Landing State -->
+            <section class="landing-section" id="landing-section">
+                <div class="landing-hero">
+                    <div class="landing-glow"></div>
+                    <div class="hero-icons">
+                        <div class="icon-circle c1"><i data-lucide="sparkles"></i></div>
+                        <div class="icon-circle c2"><i data-lucide="globe"></i></div>
+                        <div class="icon-circle c3"><i data-lucide="database"></i></div>
+                    </div>
+                    <h2>Ваш інтелектуальний помічник у світі ШІ</h2>
+                    <p>Введіть будь-який запит. Наша система автоматично сформує оптимальні пошукові запити, просканує десятки веб-сторінок, відфільтрує нерелевантний вміст та згенерує детальний звіт із посиланнями на першоджерела.</p>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/static/index.js"></script>
+</body>
+</html>

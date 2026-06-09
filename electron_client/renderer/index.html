@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src http://127.0.0.1:* http://localhost:*">
+<title>AI OSINT Desktop</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <h1><span class="icon">&#9670;</span> AI OSINT</h1>
+      <p class="subtitle">Desktop Client</p>
+    </div>
+    <div class="sidebar-section">
+      <label class="toggle-row">
+        <span>Server</span>
+        <span id="server-status" class="status-badge offline">OFFLINE</span>
+      </label>
+      <div class="server-url-row">
+        <input type="text" id="server-url" value="http://127.0.0.1:8000" placeholder="Server URL">
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <label class="toggle-row">
+        <span>Search Depth</span>
+      </label>
+      <div class="btn-group">
+        <button data-depth="0" class="btn btn-sm active">Quick</button>
+        <button data-depth="1" class="btn btn-sm">Deep</button>
+        <button data-depth="2" class="btn btn-sm">Advanced</button>
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <label class="toggle-row">
+        <span>Search Only</span>
+        <input type="checkbox" id="search-only">
+      </label>
+    </div>
+    <div class="sidebar-section fill">
+      <label class="toggle-row">
+        <span>Local Cache</span>
+        <span id="cache-count" class="badge">0</span>
+      </label>
+      <div id="cache-list" class="cache-list"></div>
+    </div>
+    <div class="sidebar-footer">
+      <button id="btn-cache-clear" class="btn btn-sm btn-danger">Clear Cache</button>
+      <button id="btn-settings" class="btn btn-sm">Settings</button>
+    </div>
+  </aside>
+
+  <main id="main">
+    <div id="chat-header">
+      <h2 id="chat-title">New Research</h2>
+      <div class="header-actions">
+        <span id="context-bar" class="context-bar" title="Context memory">
+          <span class="context-fill" style="width:100%"></span>
+        </span>
+      </div>
+    </div>
+
+    <div id="messages" class="messages">
+      <div class="welcome">
+        <div class="welcome-icon">&#9670;</div>
+        <h2>AI OSINT Desktop Client</h2>
+        <p>Specialized desktop application for AI-powered deep research.</p>
+        <p class="hint">Enter a query below to start researching.</p>
+      </div>
+    </div>
+
+    <div id="thinking" class="thinking hidden">
+      <div class="thinking-header">
+        <span class="spinner"></span>
+        <span>Researching...</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill"></div>
+      </div>
+      <div id="steps" class="steps"></div>
+    </div>
+
+    <div id="input-area" class="input-area">
+      <textarea id="input" rows="2" placeholder="Ask anything about AI..." enterkeyhint="send"></textarea>
+      <button id="btn-send" class="btn btn-primary" title="Send">&#9654;</button>
+    </div>
+  </main>
+
+  <aside id="panel" class="right-panel">
+    <div class="panel-tabs">
+      <button data-tab="sources" class="panel-tab active">Sources</button>
+      <button data-tab="info" class="panel-tab">Info</button>
+      <button data-tab="news" class="panel-tab">News</button>
+    </div>
+    <div class="panel-content">
+      <div id="tab-sources" class="tab-content active">
+        <div class="tab-header">
+          <span>Sources (<span id="source-count">0</span>)</span>
+        </div>
+        <div id="source-list" class="source-list"></div>
+      </div>
+      <div id="tab-info" class="tab-content">
+        <div class="info-section">
+          <h3>About</h3>
+          <p>AI OSINT Desktop is a specialized client for the AI OSINT Deep Research Tool. It communicates with the research server via HTTP API.</p>
+          <p>Built with Electron — a standalone desktop application, not a browser.</p>
+          <h3>Team</h3>
+          <ul class="team-list">
+            <li>Hlib</li>
+            <li>Dania</li>
+            <li>Yaroslav</li>
+            <li>Artem</li>
+          </ul>
+          <h3>Architecture</h3>
+          <p>Server (FastAPI) &#8596; Desktop Client (Electron) — each with independent business logic.</p>
+        </div>
+      </div>
+      <div id="tab-news" class="tab-content">
+        <div class="tab-header">
+          <span>AI News</span>
+          <button id="btn-refresh-news" class="btn btn-sm">Refresh</button>
+        </div>
+        <div id="news-list" class="news-list"></div>
+      </div>
+    </div>
+  </aside>
+</div>
+<script type="module" src="renderer.js"></script>
+</body>
+</html>

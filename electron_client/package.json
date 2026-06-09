@@ -1,0 +1,35 @@
+{
+  "name": "ai-osint-desktop",
+  "version": "1.0.0",
+  "description": "Specialized desktop client for AI OSINT Deep Research Tool",
+  "author": "KNU AI Research Team",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "pack": "electron-builder --dir"
+  },
+  "build": {
+    "appId": "com.knu.ai-osint-desktop",
+    "productName": "AI OSINT Desktop",
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "assets/**/*"
+    ],
+    "win": {
+      "target": "portable"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  },
+  "devDependencies": {
+    "electron": "^35.0.0",
+    "electron-builder": "^26.8.1"
+  }
+}
