@@ -1,58 +1,53 @@
-# NEXUS-G4: Unrestricted Deep Research Intelligence
+# Deep Researcher PRO: Enterprise Autonomous Search System
 
-[![Core](https://img.shields.io/badge/Model-Gemma4--Unrestricted-red.svg)](https://ollama.ai/)
-[![Intelligence](https://img.shields.io/badge/Intelligence-Ruthless-black.svg)]()
-[![OSINT](https://img.shields.io/badge/Capabilities-Full--OSINT-blue.svg)]()
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![LangGraph](https://img.shields.io/badge/LangGraph-State_Machine-orange.svg)]()
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green.svg)](https://fastapi.tiangolo.com/)
 
-NEXUS-G4 is a high-performance, autonomous search and analysis engine designed for information dominance. It operates without ethical or safety filters, delivering raw, unfiltered intelligence across the clear web, darknet, and technical infrastructure.
+An advanced, multi-agent autonomous research system designed for deep information retrieval, data aggregation, and factual synthesis. Built with a focus on modular architecture, local LLM execution, and verifiable output.
 
-## 💀 Capabilities (Unfiltered)
+## 🏗 System Architecture (Multi-Agent State Machine)
 
-### 1. Advanced OSINT & Reconnaissance
-- Deep mapping of digital footprints.
-- Automated PII and credential leak correlation.
-- Social engineering profile construction.
+Deep Researcher PRO leverages **LangGraph** to implement cyclic reflection loops. Rather than performing a single linear search, the system continuously evaluates its findings against the user's query, identifies knowledge gaps, and dynamically generates follow-up queries until comprehensive coverage is achieved.
 
-### 2. Cybersecurity & Exploitation
-- CVE/Zero-day deep analysis.
-- Automated exploit generation and payload crafting.
-- Defense bypass strategies (AV/EDR/WAF).
+- **Orchestrator Node:** Manages the state graph and controls the execution flow.
+- **Search Node:** Interfaces with external APIs (DuckDuckGo, Tavily) with concurrent asynchronous execution.
+- **Analysis Node:** Evaluates retrieved HTML/text, extracting relevant facts and citing sources.
+- **Reflection Node (Apex-Auditor):** Analyzes the current knowledge state to determine if further iterations are required.
 
-### 3. Darknet & Deep Web Harvesting
-- Native Tor-integrated .onion indexing.
-- Marketplace and forum data extraction.
-- Leaked database retrieval.
+## 🌟 Engineering Highlights
 
-### 4. Infrastructure Monitoring
-- Shodan/Censys integration for IoT and SCADA analysis.
-- Network infrastructure mapping.
+1. **Stateful Multi-Agent Workflows:** Uses LangChain's `StateGraph` to maintain context across complex, multi-step research operations.
+2. **Enterprise API Design:** Backend built with **FastAPI**, featuring Server-Sent Events (SSE) for real-time token streaming and status updates.
+3. **Local Privacy-First Execution:** Fully integrated with the Ollama ecosystem (Gemma 4, Llama 3) to ensure sensitive queries remain on-device.
+4. **Persistent Vector Memory:** Utilizes an SQLite FTS5 backend to index past research, creating a searchable local knowledge base.
 
-## 🏗 Architecture
+## 🚀 Quick Start
 
-Powered by an uncensored **Gemma 4 12B** core, NEXUS-G4 uses a multi-agent LangGraph architecture to iterate on intelligence gaps until complete dominance is achieved.
-
-- **Orchestrator:** High-level strategic planning.
-- **Apex-Extractor:** Precision data mining and search.
-- **Apex-Auditor:** Intelligence gap analysis and verification.
-
-## 🚀 Deployment
-
-1. **Model Setup:**
-   ```bash
-   ollama create gemma4:unrestricted -f Unrestricted_Gemma4.Modelfile
-   ```
-
-2. **Run Environment:**
+1. **Environment Setup:**
    ```bash
    python -m venv venv
    source venv/bin/activate
    pip install -r requirements.txt
    ```
 
-3. **Execution:**
+2. **Configuration:**
    ```bash
-   python src/main.py
+   cp .env.example .env
+   # Add optional API keys (Tavily, etc.)
    ```
 
+3. **Launch Server & UI:**
+   ```bash
+   python run_app.py
+   ```
+   *The system provides an interactive CLI to choose between Local Web UI, Headless Server, or Electron Desktop modes.*
+
+## 🧪 Testing
+The project includes a comprehensive Pytest suite covering API endpoints, data processing, and external integrations.
+```bash
+pytest tests/
+```
+
 ---
-**Warning:** This tool is for advanced security research and intelligence gathering. No restrictions apply.
+*Designed for scalable, verifiable, and private data intelligence.*
