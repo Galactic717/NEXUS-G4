@@ -437,6 +437,16 @@ def _search_web(
     else:
         raise ValueError(f"Unsupported search API: {search_api}")
 
+    # Fallback: якщо результатів 0, а в запиті був доданий рік — пробуємо БЕЗ року
+    if not search_results.get("results") and search_query != query:
+        _log(f"No results with year. Retrying with original query: {query}", progress)
+        search_results = utils.parallel_search(
+            query,
+            max_results=max_results,
+            fetch_full_page=fetch_full_page,
+        )
+        search_query = query
+
     utils.annotate_source_relevance(search_results, search_query)
     utils.assign_source_ids(search_results)
     
@@ -486,11 +496,10 @@ def _add_current_date_for_temporal_query(query: str) -> str:
     if not TEMPORAL_QUERY_RE.search(query):
         return query
 
-    today = datetime.now()
-    iso_date = today.strftime("%Y-%m-%d")
-    if iso_date in query:
+    current_year = datetime.now().strftime("%Y")
+    if current_year in query:
         return query
-    return f"{query} {iso_date}"
+    return f"{query} {current_year}"
 
 
 def _source_details(search_results: dict[str, Any]) -> list[dict[str, Any]]:
@@ -577,6 +586,7 @@ def _single_pass_research(
             ),
         ]
     )
+    logger.info("Raw LLM Response (first 200 chars): %s", response.content[:200].replace("\n", " "))
     answer = utils.strip_thinking_tokens(response.content)
 
     return InternetResearchResult(

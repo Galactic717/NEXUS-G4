@@ -476,7 +476,7 @@ def bing_reader_search(
 
     try:
         search_url = f"https://r.jina.ai/http://www.bing.com/search?q={quote_plus(query)}"
-        with httpx.Client(timeout=20.0, headers=get_stealth_headers(), follow_redirects=True) as client:
+        with get_http_client() as client:
             response = client.get(search_url)
             response.raise_for_status()
 
@@ -484,38 +484,36 @@ def bing_reader_search(
         results = []
         seen_urls = set()
         
-        # Шукаємо будь-які посилання [Title](URL) у markdown
-        for title, url in re.findall(r"\[([^\]]+)\]\((https?://[^)]+)\)", response.text):
+        # Покращений пошук посилань (підтримка різних форматів markdown від Jina)
+        matches = re.findall(r"\[([^\]]+)\]\((https?://[^\s\)]+)\)", response.text)
+        if not matches:
+            # Fallback на пошук чистих URL, якщо markdown зламаний
+            matches = [(url, url) for url in re.findall(r"https?://[^\s\)]+", response.text)]
+
+        for title, url in matches:
             title = title.strip().replace("**", "").replace("*", "")
             url = _normalize_bing_url(url.strip())
 
-            if not title or url in seen_urls:
+            if not title or url in seen_urls or "bing.com" in url or "microsoft.com" in url:
                 continue
 
-            # Додаємо валідацію хоста, щоб уникнути відносних посилань типу http:///images/...
             parsed_url = urlparse(url)
             if not parsed_url.netloc or "." not in parsed_url.netloc:
                 continue
             
             seen_urls.add(url)
-            raw_content = title
-            if fetch_full_page:
-                raw_content = fetch_raw_content(url)
-
-            results.append(
-                {
-                    "title": title,
-                    "url": url,
-                    "content": title,
-                    "raw_content": raw_content,
-                }
-            )
+            results.append({
+                "title": title,
+                "url": url,
+                "content": title,
+                "source": "bing_reader"
+            })
             if len(results) >= max_results:
                 break
 
         return {"results": _stamp_results(results)}
     except Exception as e:
-        logger.error("Error in Bing reader search fallback: %s (%s)", str(e), type(e).__name__)
+        logger.error("Error in Bing reader search: %s", str(e))
         return {"results": []}
 
 
@@ -528,7 +526,7 @@ def google_reader_search(
 
     try:
         search_url = f"https://r.jina.ai/http://www.google.com/search?q={quote_plus(query)}"
-        with httpx.Client(timeout=20.0, headers=get_stealth_headers(), follow_redirects=True) as client:
+        with get_http_client() as client:
             response = client.get(search_url)
             response.raise_for_status()
 
@@ -536,11 +534,15 @@ def google_reader_search(
         results = []
         seen_urls = set()
         
-        for title, url in re.findall(r"\[([^\]]+)\]\((https?://[^)]+)\)", response.text):
+        matches = re.findall(r"\[([^\]]+)\]\((https?://[^\s\)]+)\)", response.text)
+        if not matches:
+            matches = [(url, url) for url in re.findall(r"https?://[^\s\)]+", response.text)]
+
+        for title, url in matches:
             title = title.strip().replace("**", "").replace("*", "")
             url = url.strip()
 
-            if not title or url in seen_urls:
+            if not title or url in seen_urls or "google.com" in url:
                 continue
 
             parsed_url = urlparse(url)
@@ -548,24 +550,18 @@ def google_reader_search(
                 continue
             
             seen_urls.add(url)
-            raw_content = title
-            if fetch_full_page:
-                raw_content = fetch_raw_content(url)
-
-            results.append(
-                {
-                    "title": title,
-                    "url": url,
-                    "content": title,
-                    "raw_content": raw_content,
-                }
-            )
+            results.append({
+                "title": title,
+                "url": url,
+                "content": title,
+                "source": "google_reader"
+            })
             if len(results) >= max_results:
                 break
 
         return {"results": _stamp_results(results)}
     except Exception as e:
-        logger.error("Error in Google reader search fallback: %s (%s)", str(e), type(e).__name__)
+        logger.error("Error in Google reader search: %s", str(e))
         return {"results": []}
 
 

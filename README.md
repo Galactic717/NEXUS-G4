@@ -1,53 +1,56 @@
 # Deep Researcher PRO: Enterprise Autonomous Search System
 
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![LangGraph](https://img.shields.io/badge/LangGraph-State_Machine-orange.svg)]()
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green.svg)](https://fastapi.tiangolo.com/)
+[![LangGraph](https://img.shields.io/badge/LangGraph-State_Machine-red.svg)](https://github.com/langchain-ai/langgraph)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-An advanced, multi-agent autonomous research system designed for deep information retrieval, data aggregation, and factual synthesis. Built with a focus on modular architecture, local LLM execution, and verifiable output.
+**Deep Researcher PRO** — це передова система автономного дослідження, побудована на базі циклічних графів (LangGraph) та локальних LLM (Ollama). Вона імітує роботу аналітика-людини: шукає інформацію, аналізує її, знаходить прогалини в знаннях і проводить уточнюючі пошуки до повного вичерпання теми.
 
-## 🏗 System Architecture (Multi-Agent State Machine)
+## 🚀 Ключові особливості
 
-Deep Researcher PRO leverages **LangGraph** to implement cyclic reflection loops. Rather than performing a single linear search, the system continuously evaluates its findings against the user's query, identifies knowledge gaps, and dynamically generates follow-up queries until comprehensive coverage is achieved.
+*   **Agentic Workflow (LangGraph):** Використання повноцінного державного автомата для керування циклом дослідження.
+*   **Агресивний Дата-Майнінг:** Кастомні промпти для витягування жорстких фактів, цифр та бенчмарків.
+*   **Multi-Provider Search:** Паралельний пошук через DuckDuckGo, Tavily, Google Search API, Shodan та Darknet (Tor).
+*   **Enterprise Reporting:** Генерація професійних PDF та HTML звітів з інтерактивними посиланнями та цитуванням джерел.
+*   **Privacy First:** Повна підтримка локальних моделей (Gemma 4, Llama 3) через Ollama.
+*   **Smart Retry Logic:** Автоматичне коригування пошукових запитів при нульових результатах.
 
-- **Orchestrator Node:** Manages the state graph and controls the execution flow.
-- **Search Node:** Interfaces with external APIs (DuckDuckGo, Tavily) with concurrent asynchronous execution.
-- **Analysis Node:** Evaluates retrieved HTML/text, extracting relevant facts and citing sources.
-- **Reflection Node (Apex-Auditor):** Analyzes the current knowledge state to determine if further iterations are required.
+## 🛠 Технологічний стек
 
-## 🌟 Engineering Highlights
+*   **Backend:** FastAPI, Python 3.11+
+*   **AI Framework:** LangChain, LangGraph
+*   **Database:** SQLite + SQLAlchemy (з підтримкою retry-механізмів для високого навантаження)
+*   **Frontend:** Vanilla JS (Premium Glassmorphism UI), Lucide Icons
+*   **OSINT Tools:** Tor Proxy, Shodan API, Jina Reader bypass
 
-1. **Stateful Multi-Agent Workflows:** Uses LangChain's `StateGraph` to maintain context across complex, multi-step research operations.
-2. **Enterprise API Design:** Backend built with **FastAPI**, featuring Server-Sent Events (SSE) for real-time token streaming and status updates.
-3. **Local Privacy-First Execution:** Fully integrated with the Ollama ecosystem (Gemma 4, Llama 3) to ensure sensitive queries remain on-device.
-4. **Persistent Vector Memory:** Utilizes an SQLite FTS5 backend to index past research, creating a searchable local knowledge base.
+## 📦 Встановлення та запуск
 
-## 🚀 Quick Start
+1.  **Клонуйте репозиторій:**
+    ```bash
+    git clone https://github.com/your-username/Deep_Researcher_PRO.git
+    cd Deep_Researcher_PRO
+    ```
 
-1. **Environment Setup:**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate
-   pip install -r requirements.txt
-   ```
+2.  **Налаштуйте середовище:**
+    ```bash
+    python -m venv .venv
+    .\.venv\Scripts\activate
+    pip install -r requirements.txt
+    ```
 
-2. **Configuration:**
-   ```bash
-   cp .env.example .env
-   # Add optional API keys (Tavily, etc.)
-   ```
+3.  **Конфігурація:** Скопіюйте `.env.example` у `.env` та додайте свої ключі (Tavily, Shodan).
 
-3. **Launch Server & UI:**
-   ```bash
-   python run_app.py
-   ```
-   *The system provides an interactive CLI to choose between Local Web UI, Headless Server, or Electron Desktop modes.*
+4.  **Запуск:**
+    ```bash
+    python run_app.py
+    ```
 
-## 🧪 Testing
-The project includes a comprehensive Pytest suite covering API endpoints, data processing, and external integrations.
-```bash
-pytest tests/
-```
+## 📊 Презентація для інженерів
+
+Проект демонструє глибоке розуміння **Agentic AI**:
+1.  **Циклічне мислення:** Система не просто відповідає на запит, а будує план дослідження.
+2.  **Валідація джерел:** Автоматичне оцінювання релевантності кожного знайденого сайту (Scoring Algorithm).
+3.  **Стійкість:** Реалізовано обхід Cloudflare через Stealth-заголовки та Jina Reader.
 
 ---
-*Designed for scalable, verifiable, and private data intelligence.*
+*Розроблено як демонстрація можливостей сучасних AI-агентів у сфері інформаційної безпеки та технічного аналізу.*

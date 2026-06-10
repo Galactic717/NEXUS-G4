@@ -2,8 +2,17 @@
 import mimetypes
 import logging
 import json
+import os
 from pathlib import Path
 from typing import Optional, List, Dict, Any
+
+from dotenv import load_dotenv
+# Try loading from project root first, then current dir
+env_path = Path(__file__).resolve().parent.parent / ".env"
+if env_path.exists():
+    load_dotenv(env_path)
+else:
+    load_dotenv()
 
 import httpx
 import uvicorn
@@ -71,10 +80,23 @@ app.add_middleware(
 API_KEY = settings.search_api_key
 api_key_header = APIKeyHeader(name="X-API-KEY", auto_error=False)
 
-async def get_api_key(api_key_header: str = Security(api_key_header)):
-    if not api_key_header or api_key_header != settings.search_api_key:
-        raise HTTPException(status_code=403, detail="Invalid API Key")
-    return api_key_header
+async def get_api_key(
+    api_key_header: str = Security(api_key_header),
+    api_key_query: Optional[str] = None
+):
+    """
+    Авторизація через API Key. Підтримує заголовок X-API-KEY або параметр ?api_key= в URL.
+    """
+    target_key = api_key_header or api_key_query
+    
+    if target_key == settings.search_api_key:
+        return target_key
+    
+    # Для локальної розробки в режимі 'app' дозволяємо доступ без ключа, якщо він не вказаний
+    if settings.mode == "app" and not target_key:
+        return settings.search_api_key
+        
+    raise HTTPException(status_code=403, detail="Invalid API Key")
 
 @app.get("/api/config/key")
 async def get_client_config():
@@ -469,8 +491,16 @@ def create_news(request: NewsCreateRequest, api_key: str = Depends(get_api_key))
 from report_generator import generate_pdf_report, generate_shareable_html
 
 @app.get("/api/history/{research_id}/export/pdf")
-def export_research_pdf(research_id: int, api_key: str = Depends(get_api_key)):
+def export_research_pdf(
+    research_id: int, 
+    api_key: str = Depends(get_api_key),
+    key: Optional[str] = None # Fallback для прямого відкриття в браузері
+):
     """Експортувати дослідження у професійний PDF-звіт."""
+    # Якщо ключ передано як ?key=, використовуємо його для авторизації
+    if key and key == settings.search_api_key:
+        api_key = key
+
     research = database.get_research_by_id(research_id)
     if not research:
         raise HTTPException(status_code=404, detail="Дослідження не знайдено")
@@ -492,8 +522,16 @@ def export_research_pdf(research_id: int, api_key: str = Depends(get_api_key)):
     return FileResponse(path=file_path, filename=f"OSINT_Report_{research_id}.pdf", media_type='application/pdf')
 
 @app.get("/api/history/{research_id}/export/html")
-def export_research_html(research_id: int, api_key: str = Depends(get_api_key)):
+def export_research_html(
+    research_id: int, 
+    api_key: str = Depends(get_api_key),
+    key: Optional[str] = None # Fallback для прямого відкриття в браузері
+):
     """Експортувати дослідження у автономну веб-сторінку (Shareable Page)."""
+    # Якщо ключ передано як ?key=, використовуємо його для авторизації
+    if key and key == settings.search_api_key:
+        api_key = key
+
     research = database.get_research_by_id(research_id)
     if not research:
         raise HTTPException(status_code=404, detail="Дослідження не знайдено")

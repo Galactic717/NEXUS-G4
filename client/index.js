@@ -440,11 +440,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     actionBar.querySelector('.btn-pdf').addEventListener('click', () => {
-      window.open(`/api/history/${researchId}/export/pdf`, '_blank', 'noopener');
+      window.open(`/api/history/${researchId}/export/pdf?key=${encodeURIComponent(globalApiKey)}`, '_blank', 'noopener');
     });
 
     actionBar.querySelector('.btn-html').addEventListener('click', () => {
-      window.open(`/api/history/${researchId}/export/html`, '_blank', 'noopener');
+      window.open(`/api/history/${researchId}/export/html?key=${encodeURIComponent(globalApiKey)}`, '_blank', 'noopener');
     });
 
     const suggestions = [

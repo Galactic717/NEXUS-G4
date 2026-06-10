@@ -1,0 +1,864 @@
+2026-06-10 11:11:21,807 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 11:14:09,856 - AI-Search-Server - INFO - New research request: Elon Musk (loops: 0, session: None)
+2026-06-10 11:14:14,307 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 11:14:14,325 - AI-LLM-Factory - INFO - Initializing UNRESTRICTED LLM instance: gemma4:unrestricted (ctx=8k, temp=0.85)
+2026-06-10 11:14:14,590 - AI-Search-InternetBlock - INFO - Searching web via duckduckgo (limit 40): Elon Musk
+2026-06-10 11:14:16,689 - httpx - INFO - HTTP Request: GET https://html.duckduckgo.com/html/?q=Elon+Musk "HTTP/1.1 200 OK"
+2026-06-10 11:14:16,969 - httpx - INFO - HTTP Request: GET https://en.wikipedia.org/wiki/Elon_Musk "HTTP/1.1 403 Forbidden"
+2026-06-10 11:14:16,973 - AI-Search-Utils - WARNING - Direct fetch failed for https://en.wikipedia.org/wiki/Elon_Musk: Client error '403 Forbidden' for url 'https://en.wikipedia.org/wiki/Elon_Musk'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:14:18,937 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.google.com/search?q=Elon+Musk "HTTP/1.1 200 OK"
+2026-06-10 11:14:20,482 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.bing.com/search?q=Elon+Musk "HTTP/1.1 200 OK"
+2026-06-10 11:14:21,462 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://en.wikipedia.org/wiki/Elon_Musk "HTTP/1.1 200 OK"
+2026-06-10 11:14:21,845 - httpx - INFO - HTTP Request: GET https://www.tesla.com/elon-musk "HTTP/1.1 403 Forbidden"
+2026-06-10 11:14:21,849 - AI-Search-Utils - WARNING - Direct fetch failed for https://www.tesla.com/elon-musk: Client error '403 Forbidden' for url 'https://www.tesla.com/elon-musk'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:14:29,855 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.tesla.com/elon-musk "HTTP/1.1 200 OK"
+2026-06-10 11:14:30,576 - httpx - INFO - HTTP Request: GET https://www.forbes.com/profile/elon-musk/ "HTTP/1.1 200 OK"
+2026-06-10 11:14:31,114 - httpx - INFO - HTTP Request: GET https://x.com/ElonMusk "HTTP/1.1 200 OK"
+2026-06-10 11:14:31,925 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://x.com/ElonMusk "HTTP/1.1 200 OK"
+2026-06-10 11:14:32,221 - httpx - INFO - HTTP Request: GET https://www.reuters.com/business/elon-musk/ "HTTP/1.1 401 HTTP Forbidden"
+2026-06-10 11:14:32,223 - AI-Search-Utils - WARNING - Direct fetch failed for https://www.reuters.com/business/elon-musk/: Client error '401 HTTP Forbidden' for url 'https://www.reuters.com/business/elon-musk/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2026-06-10 11:14:32,655 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.reuters.com/business/elon-musk/ "HTTP/1.1 451 Unavailable For Legal Reasons"
+2026-06-10 11:14:32,657 - AI-Search-Utils - WARNING - Jina fallback failed for https://www.reuters.com/business/elon-musk/: Client error '451 Unavailable For Legal Reasons' for url 'https://r.jina.ai/http://www.reuters.com/business/elon-musk/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-06-10 11:14:33,514 - httpx - INFO - HTTP Request: GET https://www.britannica.com/money/Elon-Musk "HTTP/1.1 200 OK"
+2026-06-10 11:14:34,074 - httpx - INFO - HTTP Request: GET https://www.biography.com/business-leaders/elon-musk "HTTP/1.1 200 OK"
+2026-06-10 11:14:34,924 - httpx - INFO - HTTP Request: GET https://www.hellomagazine.com/tags/elon-musk/ "HTTP/1.1 200 OK"
+2026-06-10 11:14:35,259 - httpx - INFO - HTTP Request: GET https://www.cnn.com/world/elon-musk-fast-facts "HTTP/1.1 302 Found"
+2026-06-10 11:14:35,559 - httpx - INFO - HTTP Request: GET https://edition.cnn.com/world/elon-musk-fast-facts "HTTP/1.1 200 OK"
+2026-06-10 11:14:36,193 - httpx - INFO - HTTP Request: GET https://techcrunch.com/tag/elon-musk/ "HTTP/1.1 200 OK"
+2026-06-10 11:14:36,248 - AI-Search-Utils - INFO - parallel_search: 5 providers → 10 unique results (showing top 40)
+2026-06-10 11:14:36,253 - AI-Search-Utils - INFO - Fetching 1 URLs concurrently...
+2026-06-10 11:14:37,033 - httpx - INFO - HTTP Request: GET https://www.reuters.com/business/elon-musk/ "HTTP/1.1 200 OK"
+2026-06-10 11:14:37,119 - AI-Search-InternetBlock - INFO - Found 10 source(s). AI will analyze all, but UI will show top 20.
+2026-06-10 11:15:10,802 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-10 11:15:10,824 - AI-Search-Server - INFO - Research saved with ID: 2
+2026-06-10 11:16:15,909 - AI-Search-Server - INFO - New research request: Elon Musk (loops: 0, session: None)
+2026-06-10 11:16:15,948 - AI-Search-Server - INFO - Cache hit for query: Elon Musk
+2026-06-10 11:16:46,884 - AI-Search-Server - INFO - New research request: Future of space exploration (loops: 1, session: None)
+2026-06-10 11:16:49,226 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 11:16:49,239 - AI-LLM-Factory - INFO - Initializing UNRESTRICTED LLM instance: qwen2.5-coder:14b (ctx=8k, temp=0.85)
+2026-06-10 11:16:49,508 - AI-Search-InternetBlock - INFO - Searching web via duckduckgo (limit 60): Future of space exploration
+2026-06-10 11:16:51,648 - httpx - INFO - HTTP Request: GET https://html.duckduckgo.com/html/?q=Future+of+space+exploration "HTTP/1.1 200 OK"
+2026-06-10 11:16:51,916 - httpx - INFO - HTTP Request: GET https://en.wikipedia.org/wiki/Future_of_space_exploration "HTTP/1.1 403 Forbidden"
+2026-06-10 11:16:51,918 - AI-Search-Utils - WARNING - Direct fetch failed for https://en.wikipedia.org/wiki/Future_of_space_exploration: Client error '403 Forbidden' for url 'https://en.wikipedia.org/wiki/Future_of_space_exploration'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:16:54,205 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.google.com/search?q=Future+of+space+exploration "HTTP/1.1 200 OK"
+2026-06-10 11:16:54,287 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://en.wikipedia.org/wiki/Future_of_space_exploration "HTTP/1.1 200 OK"
+2026-06-10 11:16:54,607 - httpx - INFO - HTTP Request: GET https://www.nasa.gov/specials/60counting/future.html "HTTP/1.1 200 OK"
+2026-06-10 11:16:55,133 - httpx - INFO - HTTP Request: GET https://www.jameswebbdiscovery.com/future-space-exploration-2025 "HTTP/1.1 200 OK"
+2026-06-10 11:16:56,185 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.bing.com/search?q=Future+of+space+exploration "HTTP/1.1 200 OK"
+2026-06-10 11:16:56,552 - httpx - INFO - HTTP Request: GET https://www.media.mit.edu/articles/future-of-space-exploration/ "HTTP/1.1 200 OK"
+2026-06-10 11:16:56,944 - httpx - INFO - HTTP Request: GET https://www.space.com/spaceflight-evolution-next-25-years-moon-mars "HTTP/1.1 200 OK"
+2026-06-10 11:16:58,859 - httpx - INFO - HTTP Request: GET https://www.scienceabbey.com/2025/06/23/the-science-of-space-exploration-from-stars-to-stations-and-beyond/ "HTTP/1.1 200 OK"
+2026-06-10 11:17:00,966 - httpx - INFO - HTTP Request: GET https://www.popularsocialscience.com/the-future-of-space-exploration-2025/ "HTTP/1.1 200 OK"
+2026-06-10 11:17:02,116 - httpx - INFO - HTTP Request: GET https://www.nationalgeographic.com/science/article/future-spaceflight "HTTP/1.1 200 OK"
+2026-06-10 11:17:02,439 - AI-Search-Utils - INFO - parallel_search: 5 providers → 8 unique results (showing top 60)
+2026-06-10 11:17:02,445 - AI-Search-InternetBlock - INFO - Found 8 source(s). AI will analyze all, but UI will show top 20.
+2026-06-10 11:17:36,464 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-10 11:17:36,473 - AI-Search-Memory - INFO - Knowledge about 'Future of space exploration' added to memory.
+2026-06-10 11:17:36,474 - AI-Search-Memory - INFO - Extracted facts from research on 'Future of space exploration'
+2026-06-10 11:17:36,490 - AI-Search-Server - INFO - Research saved with ID: 3
+2026-06-10 11:19:18,748 - AI-Search-Server - INFO - New research request: Why is the sky blue (loops: 1, session: None)
+2026-06-10 11:19:21,054 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 11:19:21,073 - AI-LLM-Factory - INFO - Initializing UNRESTRICTED LLM instance: qwen2.5-coder:14b (ctx=8k, temp=0.85)
+2026-06-10 11:19:21,347 - AI-Search-InternetBlock - INFO - Searching web via duckduckgo (limit 60): is the sky blue
+2026-06-10 11:19:23,723 - httpx - INFO - HTTP Request: GET https://html.duckduckgo.com/html/?q=is+the+sky+blue "HTTP/1.1 200 OK"
+2026-06-10 11:19:24,892 - httpx - INFO - HTTP Request: GET https://spaceplace.nasa.gov/blue-sky/en/ "HTTP/1.1 200 OK"
+2026-06-10 11:19:25,455 - httpx - INFO - HTTP Request: GET https://www.space.com/why-is-the-sky-blue "HTTP/1.1 200 OK"
+2026-06-10 11:19:25,987 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.google.com/search?q=is+the+sky+blue "HTTP/1.1 200 OK"
+2026-06-10 11:19:26,406 - httpx - INFO - HTTP Request: GET https://www.mentalfloss.com/science/physics/why-is-the-sky-blue "HTTP/1.1 200 OK"
+2026-06-10 11:19:27,317 - httpx - INFO - HTTP Request: GET https://read.thescientificindian.com/sci/basic-science/the-sky-isnt-blue-heres-what-color-it-actually-is/ "HTTP/1.1 200 OK"
+2026-06-10 11:19:27,956 - httpx - INFO - HTTP Request: GET https://www.britannica.com/story/why-is-the-sky-blue "HTTP/1.1 200 OK"
+2026-06-10 11:19:28,308 - httpx - INFO - HTTP Request: GET https://www.livescience.com/planet-earth/why-is-the-sky-blue "HTTP/1.1 200 OK"
+2026-06-10 11:19:29,607 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.bing.com/search?q=is+the+sky+blue "HTTP/1.1 200 OK"
+2026-06-10 11:19:30,355 - httpx - INFO - HTTP Request: GET https://www.nesdis.noaa.gov/about/k-12-education/atmosphere/why-the-sky-blue "HTTP/1.1 200 OK"
+2026-06-10 11:19:31,108 - httpx - INFO - HTTP Request: GET https://theconversation.com/why-is-the-sky-blue-246393 "HTTP/1.1 200 OK"
+2026-06-10 11:19:31,187 - AI-Search-Utils - INFO - parallel_search: 5 providers → 8 unique results (showing top 60)
+2026-06-10 11:19:31,195 - AI-Search-InternetBlock - INFO - Found 8 source(s). AI will analyze all, but UI will show top 20.
+2026-06-10 11:19:53,139 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-10 11:19:53,149 - AI-Search-Memory - INFO - Knowledge about 'Why is the sky blue' added to memory.
+2026-06-10 11:19:53,150 - AI-Search-Memory - INFO - Extracted facts from research on 'Why is the sky blue'
+2026-06-10 11:19:53,167 - AI-Search-Server - INFO - Research saved with ID: 4
+2026-06-10 11:21:24,711 - AI-Search-Server - INFO - New research request: Explain quantum computing simply (loops: 1, session: None)
+2026-06-10 11:21:27,017 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 11:21:27,040 - AI-LLM-Factory - INFO - Initializing UNRESTRICTED LLM instance: qwen2.5-coder:14b (ctx=8k, temp=0.85)
+2026-06-10 11:21:27,308 - AI-Search-InternetBlock - INFO - Searching web via duckduckgo (limit 60): quantum computing simply
+2026-06-10 11:21:29,559 - httpx - INFO - HTTP Request: GET https://html.duckduckgo.com/html/?q=quantum+computing+simply "HTTP/1.1 200 OK"
+2026-06-10 11:21:30,822 - httpx - INFO - HTTP Request: GET https://www.explainthatstuff.com/quantum-computing.html "HTTP/1.1 200 OK"
+2026-06-10 11:21:31,363 - httpx - INFO - HTTP Request: GET https://www.ibm.com/think/topics/quantum-computing "HTTP/1.1 200 OK"
+2026-06-10 11:21:31,855 - httpx - INFO - HTTP Request: GET https://www.dummies.com/article/technology/computers/what-is-quantum-computing-300551/ "HTTP/1.1 200 OK"
+2026-06-10 11:21:32,043 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.bing.com/search?q=quantum+computing+simply "HTTP/1.1 200 OK"
+2026-06-10 11:21:32,150 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.google.com/search?q=quantum+computing+simply "HTTP/1.1 200 OK"
+2026-06-10 11:21:32,289 - httpx - INFO - HTTP Request: GET https://www.geeksforgeeks.org/blogs/introduction-quantum-computing/ "HTTP/1.1 200 OK"
+2026-06-10 11:21:33,108 - httpx - INFO - HTTP Request: GET https://www.nist.gov/quantum-information-science/quantum-computing-explained "HTTP/1.1 200 OK"
+2026-06-10 11:21:33,404 - httpx - INFO - HTTP Request: GET https://en.wikipedia.org/wiki/Quantum_computing "HTTP/1.1 403 Forbidden"
+2026-06-10 11:21:33,405 - AI-Search-Utils - WARNING - Direct fetch failed for https://en.wikipedia.org/wiki/Quantum_computing: Client error '403 Forbidden' for url 'https://en.wikipedia.org/wiki/Quantum_computing'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:21:36,469 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://en.wikipedia.org/wiki/Quantum_computing "HTTP/1.1 200 OK"
+2026-06-10 11:21:37,057 - httpx - INFO - HTTP Request: GET https://gauravtiwari.org/quantum-computing-guide/ "HTTP/1.1 200 OK"
+2026-06-10 11:21:38,130 - httpx - INFO - HTTP Request: GET https://giteshwagh.com/post/quantum-computing-for-beginners-explained-in-simple-words-2025-guide/ "HTTP/1.1 200 OK"
+2026-06-10 11:21:38,910 - httpx - INFO - HTTP Request: GET https://www.intoquantum.pub/p/basics-of-quantum-computing "HTTP/1.1 200 OK"
+2026-06-10 11:21:42,078 - httpx - INFO - HTTP Request: GET https://www.spinquanta.com/news-detail/quantum-computing-for-dummies-a-simple-beginner-guide "HTTP/1.1 200 OK"
+2026-06-10 11:21:42,103 - AI-Search-Utils - INFO - parallel_search: 5 providers → 10 unique results (showing top 60)
+2026-06-10 11:21:42,111 - AI-Search-InternetBlock - INFO - Found 10 source(s). AI will analyze all, but UI will show top 20.
+2026-06-10 11:22:03,724 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-10 11:22:03,735 - AI-Search-Memory - INFO - Knowledge about 'Explain quantum computing simply' added to memory.
+2026-06-10 11:22:03,735 - AI-Search-Memory - INFO - Extracted facts from research on 'Explain quantum computing simply'
+2026-06-10 11:22:03,752 - AI-Search-Server - INFO - Research saved with ID: 5
+2026-06-10 11:23:00,175 - AI-Search-Server - INFO - New research request: How to build a treehouse (loops: 1, session: None)
+2026-06-10 11:23:02,481 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 11:23:02,499 - AI-LLM-Factory - INFO - Initializing UNRESTRICTED LLM instance: qwen2.5-coder:14b (ctx=8k, temp=0.85)
+2026-06-10 11:23:02,771 - AI-Search-InternetBlock - INFO - Searching web via duckduckgo (limit 60): to build a treehouse
+2026-06-10 11:23:05,137 - httpx - INFO - HTTP Request: GET https://html.duckduckgo.com/html/?q=to+build+a+treehouse "HTTP/1.1 200 OK"
+2026-06-10 11:23:05,564 - httpx - INFO - HTTP Request: GET https://themartinnest.com/building-a-treehouse/ "HTTP/1.1 200 OK"
+2026-06-10 11:23:05,833 - httpx - INFO - HTTP Request: GET https://homesthetics.net/tree-house-plans/ "HTTP/1.1 200 OK"
+2026-06-10 11:23:06,868 - httpx - INFO - HTTP Request: GET https://treehouseguides.com/ "HTTP/1.1 200 OK"
+2026-06-10 11:23:08,063 - httpx - INFO - HTTP Request: GET https://www.instructables.com/Building-A-Treehouse/ "HTTP/1.1 200 OK"
+2026-06-10 11:23:08,847 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.bing.com/search?q=to+build+a+treehouse "HTTP/1.1 200 OK"
+2026-06-10 11:23:10,437 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.google.com/search?q=to+build+a+treehouse "HTTP/1.1 200 OK"
+2026-06-10 11:23:12,445 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.instructables.com/Building-A-Treehouse/ "HTTP/1.1 200 OK"
+2026-06-10 11:23:12,810 - httpx - INFO - HTTP Request: GET https://morningchores.com/tree-house-plans/ "HTTP/1.1 200 OK"
+2026-06-10 11:23:14,085 - httpx - INFO - HTTP Request: GET https://www.thedesignconfidential.com/diy-treehouse-from-scratch-step-by-step-guide/ "HTTP/1.1 200 OK"
+2026-06-10 11:23:14,429 - httpx - INFO - HTTP Request: GET https://www.familyhandyman.com/list/amazing-tree-house-ideas-and-building-tips/ "HTTP/1.1 403 Forbidden"
+2026-06-10 11:23:14,431 - AI-Search-Utils - WARNING - Direct fetch failed for https://www.familyhandyman.com/list/amazing-tree-house-ideas-and-building-tips/: Client error '403 Forbidden' for url 'https://www.familyhandyman.com/list/amazing-tree-house-ideas-and-building-tips/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:23:22,211 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.familyhandyman.com/list/amazing-tree-house-ideas-and-building-tips/ "HTTP/1.1 200 OK"
+2026-06-10 11:23:22,528 - httpx - INFO - HTTP Request: GET https://www.thegardenglove.com/want-to-make-a-treehouse/ "HTTP/1.1 200 OK"
+2026-06-10 11:23:23,472 - httpx - INFO - HTTP Request: GET https://www.treehousesupplies.com/collections/treehouse-plans "HTTP/1.1 200 OK"
+2026-06-10 11:23:23,744 - httpx - INFO - HTTP Request: GET https://treelofts.com/treehouse-building/ "HTTP/1.1 200 OK"
+2026-06-10 11:23:23,757 - AI-Search-Utils - INFO - parallel_search: 5 providers → 10 unique results (showing top 60)
+2026-06-10 11:23:23,767 - AI-Search-InternetBlock - INFO - Found 10 source(s). AI will analyze all, but UI will show top 20.
+2026-06-10 11:23:45,177 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-10 11:23:45,186 - AI-Search-Memory - INFO - Knowledge about 'How to build a treehouse' added to memory.
+2026-06-10 11:23:45,187 - AI-Search-Memory - INFO - Extracted facts from research on 'How to build a treehouse'
+2026-06-10 11:23:45,205 - AI-Search-Server - INFO - Research saved with ID: 6
+2026-06-10 11:24:38,906 - AI-Search-Server - INFO - New research request: How to bake a chocolate cake (loops: 1, session: None)
+2026-06-10 11:24:41,212 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 11:24:41,231 - AI-LLM-Factory - INFO - Initializing UNRESTRICTED LLM instance: gemma4:12b (ctx=8k, temp=0.85)
+2026-06-10 11:24:41,504 - AI-Search-InternetBlock - INFO - Searching web via duckduckgo (limit 60): to bake a chocolate cake
+2026-06-10 11:24:43,660 - httpx - INFO - HTTP Request: GET https://html.duckduckgo.com/html/?q=to+bake+a+chocolate+cake "HTTP/1.1 200 OK"
+2026-06-10 11:24:43,916 - httpx - INFO - HTTP Request: GET https://www.tasteofhome.com/recipes/classic-chocolate-cake/ "HTTP/1.1 403 Forbidden"
+2026-06-10 11:24:43,918 - AI-Search-Utils - WARNING - Direct fetch failed for https://www.tasteofhome.com/recipes/classic-chocolate-cake/: Client error '403 Forbidden' for url 'https://www.tasteofhome.com/recipes/classic-chocolate-cake/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:24:46,265 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.google.com/search?q=to+bake+a+chocolate+cake "HTTP/1.1 200 OK"
+2026-06-10 11:24:47,668 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.bing.com/search?q=to+bake+a+chocolate+cake "HTTP/1.1 200 OK"
+2026-06-10 11:24:57,647 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.tasteofhome.com/recipes/classic-chocolate-cake/ "HTTP/1.1 200 OK"
+2026-06-10 11:24:58,966 - httpx - INFO - HTTP Request: GET https://www.allrecipes.com/recipe/17981/one-bowl-chocolate-cake-iii/ "HTTP/1.1 402 Payment Required"
+2026-06-10 11:24:58,968 - AI-Search-Utils - WARNING - Direct fetch failed for https://www.allrecipes.com/recipe/17981/one-bowl-chocolate-cake-iii/: Client error '402 Payment Required' for url 'https://www.allrecipes.com/recipe/17981/one-bowl-chocolate-cake-iii/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+2026-06-10 11:25:06,584 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.allrecipes.com/recipe/17981/one-bowl-chocolate-cake-iii/ "HTTP/1.1 200 OK"
+2026-06-10 11:25:06,915 - httpx - INFO - HTTP Request: GET https://bakewithzoha.com/easy-chocolate-cake/ "HTTP/1.1 200 OK"
+2026-06-10 11:25:07,462 - httpx - INFO - HTTP Request: GET https://joyfulcakes.com/chocolate-cake/ "HTTP/1.1 200 OK"
+2026-06-10 11:25:07,950 - httpx - INFO - HTTP Request: GET https://joyfoodsunshine.com/chocolate-cake-recipe-from-scratch/ "HTTP/1.1 403 Forbidden"
+2026-06-10 11:25:07,951 - AI-Search-Utils - WARNING - Direct fetch failed for https://joyfoodsunshine.com/chocolate-cake-recipe-from-scratch/: Client error '403 Forbidden' for url 'https://joyfoodsunshine.com/chocolate-cake-recipe-from-scratch/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:25:24,076 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://joyfoodsunshine.com/chocolate-cake-recipe-from-scratch/ "HTTP/1.1 200 OK"
+2026-06-10 11:25:24,466 - httpx - INFO - HTTP Request: GET https://everythingjustbaked.com/moist-chocolate-cake-recipe/ "HTTP/1.1 200 OK"
+2026-06-10 11:25:24,803 - httpx - INFO - HTTP Request: GET https://www.inspiredtaste.net/90262/chocolate-cake-recipe/ "HTTP/1.1 403 Forbidden"
+2026-06-10 11:25:24,805 - AI-Search-Utils - WARNING - Direct fetch failed for https://www.inspiredtaste.net/90262/chocolate-cake-recipe/: Client error '403 Forbidden' for url 'https://www.inspiredtaste.net/90262/chocolate-cake-recipe/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:25:31,960 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.inspiredtaste.net/90262/chocolate-cake-recipe/ "HTTP/1.1 200 OK"
+2026-06-10 11:25:33,164 - httpx - INFO - HTTP Request: GET https://www.kingarthurbaking.com/recipes/chocolate-cake-recipe "HTTP/1.1 200 OK"
+2026-06-10 11:25:33,693 - httpx - INFO - HTTP Request: GET https://www.bbc.co.uk/food/recipes/easy_chocolate_cake_31070 "HTTP/1.1 200 OK"
+2026-06-10 11:25:34,492 - httpx - INFO - HTTP Request: GET https://www.recipetineats.com/chocolate-cake/ "HTTP/1.1 200 OK"
+2026-06-10 11:25:34,790 - AI-Search-Utils - INFO - parallel_search: 5 providers → 10 unique results (showing top 60)
+2026-06-10 11:25:34,800 - AI-Search-InternetBlock - INFO - Found 10 source(s). AI will analyze all, but UI will show top 20.
+2026-06-10 11:26:09,429 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-10 11:26:09,452 - AI-Search-Server - INFO - Research saved with ID: 7
+2026-06-10 11:27:03,082 - AI-Search-Server - INFO - New research request: Roman Empire (loops: 1, session: None)
+2026-06-10 11:27:05,394 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 11:27:05,414 - AI-LLM-Factory - INFO - Initializing UNRESTRICTED LLM instance: gemma4:12b (ctx=8k, temp=0.85)
+2026-06-10 11:27:05,689 - AI-Search-InternetBlock - INFO - Searching web via duckduckgo (limit 60): Roman Empire
+2026-06-10 11:27:07,822 - httpx - INFO - HTTP Request: GET https://html.duckduckgo.com/html/?q=Roman+Empire "HTTP/1.1 200 OK"
+2026-06-10 11:27:08,125 - httpx - INFO - HTTP Request: GET https://en.wikipedia.org/wiki/Roman_Empire "HTTP/1.1 403 Forbidden"
+2026-06-10 11:27:08,127 - AI-Search-Utils - WARNING - Direct fetch failed for https://en.wikipedia.org/wiki/Roman_Empire: Client error '403 Forbidden' for url 'https://en.wikipedia.org/wiki/Roman_Empire'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:27:10,150 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.google.com/search?q=Roman+Empire "HTTP/1.1 200 OK"
+2026-06-10 11:27:12,439 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.bing.com/search?q=Roman+Empire "HTTP/1.1 200 OK"
+2026-06-10 11:27:14,531 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://en.wikipedia.org/wiki/Roman_Empire "HTTP/1.1 200 OK"
+2026-06-10 11:27:15,093 - httpx - INFO - HTTP Request: GET https://www.britannica.com/place/Roman-Empire "HTTP/1.1 200 OK"
+2026-06-10 11:27:15,434 - httpx - INFO - HTTP Request: GET https://www.worldhistory.org/Roman_Empire/ "HTTP/1.1 200 OK"
+2026-06-10 11:27:16,568 - httpx - INFO - HTTP Request: GET https://romanempirehistory.com/ "HTTP/1.1 200 OK"
+2026-06-10 11:27:17,816 - httpx - INFO - HTTP Request: GET http://www.romanpast.com/ "HTTP/1.1 200 OK"
+2026-06-10 11:27:18,444 - httpx - INFO - HTTP Request: GET https://roman-empire.net/ "HTTP/1.1 200 OK"
+2026-06-10 11:27:19,525 - httpx - INFO - HTTP Request: GET https://worldhistoryedu.com/timeline-of-the-roman-empire/ "HTTP/1.1 200 OK"
+2026-06-10 11:27:20,487 - httpx - INFO - HTTP Request: GET https://historycooperative.org/birth-height-and-fall-of-the-roman-empire/ "HTTP/1.1 200 OK"
+2026-06-10 11:27:21,052 - httpx - INFO - HTTP Request: GET https://www.bbc.co.uk/bitesize/topics/zwmpfg8 "HTTP/1.1 200 OK"
+2026-06-10 11:27:21,435 - httpx - INFO - HTTP Request: GET https://www.historyextra.com/period/roman/roman-empire-history-facts-map-timeline-peak-when-start-when-split-how-long-tetrarchy/ "HTTP/1.1 200 OK"
+2026-06-10 11:27:21,549 - AI-Search-Utils - INFO - parallel_search: 5 providers → 10 unique results (showing top 60)
+2026-06-10 11:27:21,563 - AI-Search-InternetBlock - INFO - Found 10 source(s). AI will analyze all, but UI will show top 20.
+2026-06-10 11:27:40,414 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-10 11:27:40,435 - AI-Search-Server - INFO - Research saved with ID: 8
+2026-06-10 11:29:17,682 - AI-Search-Server - INFO - New research request: Tell me about cats (loops: 0, session: None)
+2026-06-10 11:29:20,014 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 11:29:20,032 - AI-LLM-Factory - INFO - Initializing UNRESTRICTED LLM instance: gemma4:12b (ctx=8k, temp=0.85)
+2026-06-10 11:29:20,303 - AI-Search-InternetBlock - INFO - Searching web via duckduckgo (limit 40): about cats
+2026-06-10 11:29:22,476 - httpx - INFO - HTTP Request: GET https://html.duckduckgo.com/html/?q=about+cats "HTTP/1.1 200 OK"
+2026-06-10 11:29:22,745 - httpx - INFO - HTTP Request: GET https://en.wikipedia.org/wiki/Cat "HTTP/1.1 403 Forbidden"
+2026-06-10 11:29:22,746 - AI-Search-Utils - WARNING - Direct fetch failed for https://en.wikipedia.org/wiki/Cat: Client error '403 Forbidden' for url 'https://en.wikipedia.org/wiki/Cat'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:29:25,031 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.google.com/search?q=about+cats "HTTP/1.1 200 OK"
+2026-06-10 11:29:25,860 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.bing.com/search?q=about+cats "HTTP/1.1 200 OK"
+2026-06-10 11:29:39,500 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://en.wikipedia.org/wiki/Cat "HTTP/1.1 200 OK"
+2026-06-10 11:29:39,949 - httpx - INFO - HTTP Request: GET https://www.britannica.com/animal/cat "HTTP/1.1 200 OK"
+2026-06-10 11:29:41,476 - httpx - INFO - HTTP Request: GET https://www.factretriever.com/cat-facts "HTTP/1.1 200 OK"
+2026-06-10 11:29:42,434 - httpx - INFO - HTTP Request: GET https://animalcorner.org/animals/cats/ "HTTP/1.1 200 OK"
+2026-06-10 11:29:43,254 - httpx - INFO - HTTP Request: GET https://www.ifaw.org/animals/cats "HTTP/1.1 200 OK"
+2026-06-10 11:29:44,114 - httpx - INFO - HTTP Request: GET https://www.petmd.com/cat/general-health/fun-facts-about-cats "HTTP/1.1 200 OK"
+2026-06-10 11:29:44,819 - httpx - INFO - HTTP Request: GET https://thediscerningcat.com/fun-facts-about-cats/ "HTTP/1.1 200 OK"
+2026-06-10 11:29:45,260 - httpx - INFO - HTTP Request: GET https://www.livescience.com/facts-about-cats "HTTP/1.1 200 OK"
+2026-06-10 11:29:46,167 - httpx - INFO - HTTP Request: GET https://www.purepawsvet.com/25-amazing-facts-about-cats/ "HTTP/1.1 200 OK"
+2026-06-10 11:29:46,662 - httpx - INFO - HTTP Request: GET https://www.dailypaws.com/living-with-pets/pet-owner-relationship/facts-about-cats "HTTP/1.1 402 Payment Required"
+2026-06-10 11:29:46,663 - AI-Search-Utils - WARNING - Direct fetch failed for https://www.dailypaws.com/living-with-pets/pet-owner-relationship/facts-about-cats: Client error '402 Payment Required' for url 'https://www.dailypaws.com/living-with-pets/pet-owner-relationship/facts-about-cats'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+2026-06-10 11:29:49,644 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.dailypaws.com/living-with-pets/pet-owner-relationship/facts-about-cats "HTTP/1.1 200 OK"
+2026-06-10 11:29:49,648 - AI-Search-Utils - INFO - parallel_search: 5 providers → 10 unique results (showing top 40)
+2026-06-10 11:29:49,660 - AI-Search-InternetBlock - INFO - Found 10 source(s). AI will analyze all, but UI will show top 20.
+2026-06-10 11:30:09,040 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-10 11:30:09,061 - AI-Search-Server - INFO - Research saved with ID: 9
+2026-06-10 11:31:22,884 - AI-Search-Server - INFO - New research request: Tell me a joke (loops: 0, session: None)
+2026-06-10 11:31:25,190 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 11:31:25,213 - AI-LLM-Factory - INFO - Initializing UNRESTRICTED LLM instance: gemma4:12b (ctx=8k, temp=0.85)
+2026-06-10 11:31:25,483 - AI-Search-InternetBlock - INFO - Searching web via duckduckgo (limit 40): a joke
+2026-06-10 11:31:27,564 - httpx - INFO - HTTP Request: GET https://html.duckduckgo.com/html/?q=a+joke "HTTP/1.1 200 OK"
+2026-06-10 11:31:27,982 - httpx - INFO - HTTP Request: GET https://parade.com/1287449/marynliles/short-jokes/ "HTTP/1.1 403 Forbidden"
+2026-06-10 11:31:27,984 - AI-Search-Utils - WARNING - Direct fetch failed for https://parade.com/1287449/marynliles/short-jokes/: Client error '403 Forbidden' for url 'https://parade.com/1287449/marynliles/short-jokes/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:31:28,447 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://parade.com/1287449/marynliles/short-jokes/ "HTTP/1.1 451 Unavailable For Legal Reasons"
+2026-06-10 11:31:28,448 - AI-Search-Utils - WARNING - Jina fallback failed for https://parade.com/1287449/marynliles/short-jokes/: Client error '451 Unavailable For Legal Reasons' for url 'https://r.jina.ai/http://parade.com/1287449/marynliles/short-jokes/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-06-10 11:31:28,710 - httpx - INFO - HTTP Request: GET https://www.skiptomylou.org/funny-jokes/ "HTTP/1.1 403 Forbidden"
+2026-06-10 11:31:28,712 - AI-Search-Utils - WARNING - Direct fetch failed for https://www.skiptomylou.org/funny-jokes/: Client error '403 Forbidden' for url 'https://www.skiptomylou.org/funny-jokes/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:31:30,224 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.google.com/search?q=a+joke "HTTP/1.1 200 OK"
+2026-06-10 11:31:36,766 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.bing.com/search?q=a+joke "HTTP/1.1 200 OK"
+2026-06-10 11:31:37,369 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.skiptomylou.org/funny-jokes/ "HTTP/1.1 200 OK"
+2026-06-10 11:31:37,786 - httpx - INFO - HTTP Request: GET https://www.countryliving.com/life/entertainment/a36178514/hilariously-funny-jokes/ "HTTP/1.1 200 OK"
+2026-06-10 11:31:38,958 - httpx - INFO - HTTP Request: GET https://humornama.com/jokes/joke-of-the-day/ "HTTP/1.1 200 OK"
+2026-06-10 11:31:39,411 - httpx - INFO - HTTP Request: GET https://www.wikihow.com/Short-Funny-Jokes "HTTP/1.1 200 OK"
+2026-06-10 11:31:40,798 - httpx - INFO - HTTP Request: GET https://www.classpop.com/magazine/short-jokes-for-adults "HTTP/1.1 200 OK"
+2026-06-10 11:31:41,967 - httpx - INFO - HTTP Request: GET https://www.hilariousjokestoday.com/jokes-of-the-day "HTTP/1.1 200 OK"
+2026-06-10 11:31:42,280 - httpx - INFO - HTTP Request: GET https://www.rd.com/list/clean-jokes/ "HTTP/1.1 403 Forbidden"
+2026-06-10 11:31:42,283 - AI-Search-Utils - WARNING - Direct fetch failed for https://www.rd.com/list/clean-jokes/: Client error '403 Forbidden' for url 'https://www.rd.com/list/clean-jokes/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:31:42,758 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.rd.com/list/clean-jokes/ "HTTP/1.1 451 Unavailable For Legal Reasons"
+2026-06-10 11:31:42,760 - AI-Search-Utils - WARNING - Jina fallback failed for https://www.rd.com/list/clean-jokes/: Client error '451 Unavailable For Legal Reasons' for url 'https://r.jina.ai/http://www.rd.com/list/clean-jokes/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-06-10 11:31:43,979 - httpx - INFO - HTTP Request: GET https://www.today.com/life/inspiration/short-jokes-rcna54409 "HTTP/1.1 200 OK"
+2026-06-10 11:31:44,284 - httpx - INFO - HTTP Request: GET https://www.yahoo.com/entertainment/75-short-jokes-laugh-minute-225831296.html "HTTP/1.1 429 Too Many Requests"
+2026-06-10 11:31:44,285 - AI-Search-Utils - WARNING - Direct fetch failed for https://www.yahoo.com/entertainment/75-short-jokes-laugh-minute-225831296.html: Client error '429 Too Many Requests' for url 'https://www.yahoo.com/entertainment/75-short-jokes-laugh-minute-225831296.html'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+2026-06-10 11:31:44,844 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.yahoo.com/entertainment/75-short-jokes-laugh-minute-225831296.html "HTTP/1.1 451 Unavailable For Legal Reasons"
+2026-06-10 11:31:44,845 - AI-Search-Utils - WARNING - Jina fallback failed for https://www.yahoo.com/entertainment/75-short-jokes-laugh-minute-225831296.html: Client error '451 Unavailable For Legal Reasons' for url 'https://r.jina.ai/http://www.yahoo.com/entertainment/75-short-jokes-laugh-minute-225831296.html'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-06-10 11:31:44,847 - AI-Search-Utils - INFO - parallel_search: 5 providers → 10 unique results (showing top 40)
+2026-06-10 11:31:44,856 - AI-Search-Utils - INFO - Fetching 3 URLs concurrently...
+2026-06-10 11:31:45,169 - httpx - INFO - HTTP Request: GET https://www.rd.com/list/clean-jokes/ "HTTP/1.1 403 Forbidden"
+2026-06-10 11:31:45,170 - AI-Search-Utils - WARNING - Direct fetch failed for https://www.rd.com/list/clean-jokes/: Client error '403 Forbidden' for url 'https://www.rd.com/list/clean-jokes/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:31:45,174 - httpx - INFO - HTTP Request: GET https://www.yahoo.com/entertainment/75-short-jokes-laugh-minute-225831296.html "HTTP/1.1 429 Too Many Requests"
+2026-06-10 11:31:45,175 - AI-Search-Utils - WARNING - Direct fetch failed for https://www.yahoo.com/entertainment/75-short-jokes-laugh-minute-225831296.html: Client error '429 Too Many Requests' for url 'https://www.yahoo.com/entertainment/75-short-jokes-laugh-minute-225831296.html'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+2026-06-10 11:31:45,365 - httpx - INFO - HTTP Request: GET https://parade.com/1287449/marynliles/short-jokes/ "HTTP/1.1 403 Forbidden"
+2026-06-10 11:31:45,365 - AI-Search-Utils - WARNING - Direct fetch failed for https://parade.com/1287449/marynliles/short-jokes/: Client error '403 Forbidden' for url 'https://parade.com/1287449/marynliles/short-jokes/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:31:45,655 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.yahoo.com/entertainment/75-short-jokes-laugh-minute-225831296.html "HTTP/1.1 451 Unavailable For Legal Reasons"
+2026-06-10 11:31:45,657 - AI-Search-Utils - WARNING - Jina fallback failed for https://www.yahoo.com/entertainment/75-short-jokes-laugh-minute-225831296.html: Client error '451 Unavailable For Legal Reasons' for url 'https://r.jina.ai/http://www.yahoo.com/entertainment/75-short-jokes-laugh-minute-225831296.html'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-06-10 11:31:45,673 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.rd.com/list/clean-jokes/ "HTTP/1.1 451 Unavailable For Legal Reasons"
+2026-06-10 11:31:45,675 - AI-Search-Utils - WARNING - Jina fallback failed for https://www.rd.com/list/clean-jokes/: Client error '451 Unavailable For Legal Reasons' for url 'https://r.jina.ai/http://www.rd.com/list/clean-jokes/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-06-10 11:31:45,796 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://parade.com/1287449/marynliles/short-jokes/ "HTTP/1.1 451 Unavailable For Legal Reasons"
+2026-06-10 11:31:45,797 - AI-Search-Utils - WARNING - Jina fallback failed for https://parade.com/1287449/marynliles/short-jokes/: Client error '451 Unavailable For Legal Reasons' for url 'https://r.jina.ai/http://parade.com/1287449/marynliles/short-jokes/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451
+2026-06-10 11:31:45,799 - AI-Search-InternetBlock - INFO - Found 10 source(s). AI will analyze all, but UI will show top 20.
+2026-06-10 11:32:04,601 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-10 11:32:04,629 - AI-Search-Server - INFO - Research saved with ID: 10
+2026-06-10 11:33:42,376 - AI-Search-Server - INFO - New research request: Tell me about dogs (loops: 0, session: None)
+2026-06-10 11:33:44,706 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 11:33:44,733 - AI-LLM-Factory - INFO - Initializing UNRESTRICTED LLM instance: gemma4:12b (ctx=8k, temp=0.85)
+2026-06-10 11:33:45,009 - AI-Search-InternetBlock - INFO - Searching web via duckduckgo (limit 40): about dogs
+2026-06-10 11:33:47,968 - httpx - INFO - HTTP Request: GET https://html.duckduckgo.com/html/?q=about+dogs "HTTP/1.1 200 OK"
+2026-06-10 11:33:48,239 - httpx - INFO - HTTP Request: GET https://en.wikipedia.org/wiki/Dog "HTTP/1.1 403 Forbidden"
+2026-06-10 11:33:48,240 - AI-Search-Utils - WARNING - Direct fetch failed for https://en.wikipedia.org/wiki/Dog: Client error '403 Forbidden' for url 'https://en.wikipedia.org/wiki/Dog'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:33:49,458 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.google.com/search?q=about+dogs "HTTP/1.1 200 OK"
+2026-06-10 11:33:51,349 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.bing.com/search?q=about+dogs "HTTP/1.1 200 OK"
+2026-06-10 11:33:51,980 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://en.wikipedia.org/wiki/Dog "HTTP/1.1 200 OK"
+2026-06-10 11:33:52,448 - httpx - INFO - HTTP Request: GET https://www.britannica.com/animal/dog "HTTP/1.1 200 OK"
+2026-06-10 11:33:52,863 - httpx - INFO - HTTP Request: GET https://www.dogster.com/ "HTTP/1.1 200 OK"
+2026-06-10 11:33:53,200 - httpx - INFO - HTTP Request: GET https://www.thesprucepets.com/types-of-dog-breeds-4688776 "HTTP/1.1 402 Payment Required"
+2026-06-10 11:33:53,202 - AI-Search-Utils - WARNING - Direct fetch failed for https://www.thesprucepets.com/types-of-dog-breeds-4688776: Client error '402 Payment Required' for url 'https://www.thesprucepets.com/types-of-dog-breeds-4688776'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+2026-06-10 11:33:59,636 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.thesprucepets.com/types-of-dog-breeds-4688776 "HTTP/1.1 200 OK"
+2026-06-10 11:34:00,116 - httpx - INFO - HTTP Request: GET https://www.akc.org/ "HTTP/1.1 200 OK"
+2026-06-10 11:34:00,729 - httpx - INFO - HTTP Request: GET https://news.harvard.edu/gazette/story/2026/04/why-we-love-dogs-and-they-love-us-back/ "HTTP/1.1 200 OK"
+2026-06-10 11:34:03,079 - httpx - INFO - HTTP Request: GET https://www.purina.co.uk/articles/dogs/behaviour/common-questions/amazing-dog-facts "HTTP/1.1 200 OK"
+2026-06-10 11:34:03,628 - httpx - INFO - HTTP Request: GET https://www.goodhousekeeping.com/life/pets/g70013585/surprising-facts-about-dogs/ "HTTP/1.1 200 OK"
+2026-06-10 11:34:04,026 - httpx - INFO - HTTP Request: GET https://a-z-animals.com/pets/dogs/ "HTTP/1.1 403 Forbidden"
+2026-06-10 11:34:04,027 - AI-Search-Utils - WARNING - Direct fetch failed for https://a-z-animals.com/pets/dogs/: Client error '403 Forbidden' for url 'https://a-z-animals.com/pets/dogs/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:34:12,872 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://a-z-animals.com/pets/dogs/ "HTTP/1.1 200 OK"
+2026-06-10 11:34:13,261 - httpx - INFO - HTTP Request: GET https://www.natgeokids.com/uk/discover/animals/general-animals/dog-facts/ "HTTP/1.1 200 OK"
+2026-06-10 11:34:13,567 - AI-Search-Utils - INFO - parallel_search: 5 providers → 10 unique results (showing top 40)
+2026-06-10 11:34:13,575 - AI-Search-InternetBlock - INFO - Found 10 source(s). AI will analyze all, but UI will show top 20.
+2026-06-10 11:34:46,920 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-10 11:34:46,941 - AI-Search-Server - INFO - Research saved with ID: 11
+2026-06-10 11:35:56,775 - AI-Search-Server - INFO - New research request: The moon (loops: 0, session: None)
+2026-06-10 11:35:59,084 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 11:35:59,104 - AI-LLM-Factory - INFO - Initializing UNRESTRICTED LLM instance: gemma4:unrestricted (ctx=8k, temp=0.85)
+2026-06-10 11:35:59,377 - AI-Search-InternetBlock - INFO - Searching web via duckduckgo (limit 40): The moon
+2026-06-10 11:36:02,012 - httpx - INFO - HTTP Request: GET https://html.duckduckgo.com/html/?q=The+moon "HTTP/1.1 200 OK"
+2026-06-10 11:36:02,290 - httpx - INFO - HTTP Request: GET https://en.wikipedia.org/wiki/Moon "HTTP/1.1 403 Forbidden"
+2026-06-10 11:36:02,291 - AI-Search-Utils - WARNING - Direct fetch failed for https://en.wikipedia.org/wiki/Moon: Client error '403 Forbidden' for url 'https://en.wikipedia.org/wiki/Moon'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:36:05,740 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.google.com/search?q=The+moon "HTTP/1.1 200 OK"
+2026-06-10 11:36:09,021 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://en.wikipedia.org/wiki/Moon "HTTP/1.1 200 OK"
+2026-06-10 11:36:09,336 - httpx - INFO - HTTP Request: GET https://science.nasa.gov/moon/ "HTTP/1.1 200 OK"
+2026-06-10 11:36:09,661 - httpx - INFO - HTTP Request: GET https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D0%B0 "HTTP/1.1 403 Forbidden"
+2026-06-10 11:36:09,662 - AI-Search-Utils - WARNING - Direct fetch failed for https://ru.wikipedia.org/wiki/Луна: Client error '403 Forbidden' for url 'https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D0%B0'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:36:09,738 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.bing.com/search?q=The+moon "HTTP/1.1 200 OK"
+2026-06-10 11:36:13,329 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D0%B0 "HTTP/1.1 200 OK"
+2026-06-10 11:36:14,040 - httpx - INFO - HTTP Request: GET https://themoon.page/ "HTTP/1.1 200 OK"
+2026-06-10 11:36:26,409 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://themoon.page/ "HTTP/1.1 200 OK"
+2026-06-10 11:36:26,672 - httpx - INFO - HTTP Request: GET https://science.nasa.gov/moon/facts/ "HTTP/1.1 200 OK"
+2026-06-10 11:36:27,000 - httpx - INFO - HTTP Request: GET https://www.space.com/astronomy/solar-system/moon "HTTP/1.1 200 OK"
+2026-06-10 11:36:27,690 - httpx - INFO - HTTP Request: GET https://www.britannica.com/place/Moon "HTTP/1.1 200 OK"
+2026-06-10 11:36:28,050 - httpx - INFO - HTTP Request: GET https://www.nhm.ac.uk/discover/factfile-the-moon.html "HTTP/1.1 200 OK"
+2026-06-10 11:36:28,394 - httpx - INFO - HTTP Request: GET https://www.youtube.com/@the-moons "HTTP/1.1 200 OK"
+2026-06-10 11:36:28,888 - httpx - INFO - HTTP Request: GET https://theskylive.com/moon-info "HTTP/1.1 403 Forbidden"
+2026-06-10 11:36:28,890 - AI-Search-Utils - WARNING - Direct fetch failed for https://theskylive.com/moon-info: Client error '403 Forbidden' for url 'https://theskylive.com/moon-info'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:36:35,709 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://theskylive.com/moon-info "HTTP/1.1 200 OK"
+2026-06-10 11:36:35,713 - AI-Search-Utils - INFO - parallel_search: 5 providers → 10 unique results (showing top 40)
+2026-06-10 11:36:35,734 - AI-Search-InternetBlock - INFO - Found 10 source(s). AI will analyze all, but UI will show top 20.
+2026-06-10 11:37:08,733 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-10 11:37:08,757 - AI-Search-Server - INFO - Research saved with ID: 12
+2026-06-10 11:37:58,524 - AI-Search-Server - INFO - New research request: Mars (loops: 0, session: None)
+2026-06-10 11:38:00,822 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 11:38:00,838 - AI-LLM-Factory - INFO - Initializing UNRESTRICTED LLM instance: gemma4:unrestricted (ctx=8k, temp=0.85)
+2026-06-10 11:38:01,117 - AI-Search-InternetBlock - INFO - Searching web via duckduckgo (limit 40): Mars
+2026-06-10 11:38:03,115 - httpx - INFO - HTTP Request: GET https://html.duckduckgo.com/html/?q=Mars "HTTP/1.1 200 OK"
+2026-06-10 11:38:03,382 - httpx - INFO - HTTP Request: GET https://en.wikipedia.org/wiki/Mars "HTTP/1.1 403 Forbidden"
+2026-06-10 11:38:03,382 - AI-Search-Utils - WARNING - Direct fetch failed for https://en.wikipedia.org/wiki/Mars: Client error '403 Forbidden' for url 'https://en.wikipedia.org/wiki/Mars'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:38:06,093 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.google.com/search?q=Mars "HTTP/1.1 200 OK"
+2026-06-10 11:38:07,245 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.bing.com/search?q=Mars "HTTP/1.1 200 OK"
+2026-06-10 11:38:20,274 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://en.wikipedia.org/wiki/Mars "HTTP/1.1 200 OK"
+2026-06-10 11:38:20,542 - httpx - INFO - HTTP Request: GET https://science.nasa.gov/mars/facts/ "HTTP/1.1 200 OK"
+2026-06-10 11:38:21,428 - httpx - INFO - HTTP Request: GET https://www.britannica.com/place/Mars-planet "HTTP/1.1 200 OK"
+2026-06-10 11:38:21,761 - httpx - INFO - HTTP Request: GET https://starwalk.space/ru/news/mars-the-ultimate-guide "HTTP/1.1 200 OK"
+2026-06-10 11:38:22,117 - httpx - INFO - HTTP Request: GET https://www.space.com/astronomy/solar-system/mars "HTTP/1.1 200 OK"
+2026-06-10 11:38:22,791 - AI-Search-Utils - WARNING - Direct fetch failed for https://prod.mars.jpllab.net/: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1081)
+2026-06-10 11:38:25,835 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://prod.mars.jpllab.net/ "HTTP/1.1 200 OK"
+2026-06-10 11:38:26,558 - httpx - INFO - HTTP Request: GET https://education.marssociety.org/about-mars/overview/ "HTTP/1.1 200 OK"
+2026-06-10 11:38:27,522 - httpx - INFO - HTTP Request: GET https://www.nationalgeographic.com/science/article/mars-1 "HTTP/1.1 200 OK"
+2026-06-10 11:38:28,601 - httpx - INFO - HTTP Request: GET https://www.planetary.org/worlds/mars "HTTP/1.1 200 OK"
+2026-06-10 11:38:29,303 - httpx - INFO - HTTP Request: GET https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Exploration/Mars "HTTP/1.1 200 OK"
+2026-06-10 11:38:29,318 - AI-Search-Utils - INFO - parallel_search: 5 providers → 10 unique results (showing top 40)
+2026-06-10 11:38:29,327 - AI-Search-InternetBlock - INFO - Found 10 source(s). AI will analyze all, but UI will show top 20.
+2026-06-10 11:38:48,325 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-10 11:38:48,345 - AI-Search-Server - INFO - Research saved with ID: 13
+2026-06-10 11:40:06,622 - AI-Search-Server - INFO - New research request: Saturn (loops: 0, session: None)
+2026-06-10 11:40:08,912 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 11:40:08,929 - AI-LLM-Factory - INFO - Initializing UNRESTRICTED LLM instance: gemma4:unrestricted (ctx=8k, temp=0.85)
+2026-06-10 11:40:09,208 - AI-Search-InternetBlock - INFO - Searching web via duckduckgo (limit 40): Saturn
+2026-06-10 11:40:11,170 - httpx - INFO - HTTP Request: GET https://html.duckduckgo.com/html/?q=Saturn "HTTP/1.1 200 OK"
+2026-06-10 11:40:14,205 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.google.com/search?q=Saturn "HTTP/1.1 200 OK"
+2026-06-10 11:40:20,418 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.bing.com/search?q=Saturn "HTTP/1.1 200 OK"
+2026-06-10 11:40:25,794 - httpx - INFO - HTTP Request: GET https://saturn.ua/uk/ "HTTP/1.1 200 OK"
+2026-06-10 11:40:26,078 - httpx - INFO - HTTP Request: GET https://en.wikipedia.org/wiki/Saturn "HTTP/1.1 403 Forbidden"
+2026-06-10 11:40:26,079 - AI-Search-Utils - WARNING - Direct fetch failed for https://en.wikipedia.org/wiki/Saturn: Client error '403 Forbidden' for url 'https://en.wikipedia.org/wiki/Saturn'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:40:30,020 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://en.wikipedia.org/wiki/Saturn "HTTP/1.1 200 OK"
+2026-06-10 11:40:30,273 - httpx - INFO - HTTP Request: GET https://science.nasa.gov/saturn/ "HTTP/1.1 200 OK"
+2026-06-10 11:40:30,674 - httpx - INFO - HTTP Request: GET https://www.saturn.de/ "HTTP/1.1 403 Forbidden"
+2026-06-10 11:40:30,675 - AI-Search-Utils - WARNING - Direct fetch failed for https://www.saturn.de/: Client error '403 Forbidden' for url 'https://www.saturn.de/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:40:38,596 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.saturn.de/ "HTTP/1.1 200 OK"
+2026-06-10 11:40:39,434 - httpx - INFO - HTTP Request: GET https://www.britannica.com/place/Saturn-planet "HTTP/1.1 200 OK"
+2026-06-10 11:40:40,028 - httpx - INFO - HTTP Request: GET https://atlasof.space/saturn "HTTP/1.1 200 OK"
+2026-06-10 11:40:46,120 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://atlasof.space/saturn "HTTP/1.1 200 OK"
+2026-06-10 11:40:46,553 - httpx - INFO - HTTP Request: GET https://vencon.ua/ua/brands/saturn "HTTP/1.1 200 OK"
+2026-06-10 11:40:47,611 - httpx - INFO - HTTP Request: GET https://www.asc-csa.gc.ca/eng/astronomy/solar-system/saturn.asp "HTTP/1.1 200 OK"
+2026-06-10 11:40:48,549 - httpx - INFO - HTTP Request: GET https://www.nationalgeographic.com/science/article/saturn "HTTP/1.1 200 OK"
+2026-06-10 11:40:48,840 - httpx - INFO - HTTP Request: GET https://bt.rozetka.com.ua/ua/fans/c80186/producer=saturn/ "HTTP/1.1 403 Forbidden"
+2026-06-10 11:40:48,842 - AI-Search-Utils - WARNING - Direct fetch failed for https://bt.rozetka.com.ua/ua/fans/c80186/producer=saturn/: Client error '403 Forbidden' for url 'https://bt.rozetka.com.ua/ua/fans/c80186/producer=saturn/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:40:54,723 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://bt.rozetka.com.ua/ua/fans/c80186/producer=saturn/ "HTTP/1.1 200 OK"
+2026-06-10 11:40:54,727 - AI-Search-Utils - INFO - parallel_search: 5 providers → 10 unique results (showing top 40)
+2026-06-10 11:40:54,738 - AI-Search-InternetBlock - INFO - Found 10 source(s). AI will analyze all, but UI will show top 20.
+2026-06-10 11:41:13,348 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-10 11:41:13,370 - AI-Search-Server - INFO - Research saved with ID: 14
+2026-06-10 11:42:18,619 - AI-Search-Server - INFO - New research request: Jupiter (loops: 0, session: None)
+2026-06-10 11:42:20,923 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 11:42:20,942 - AI-LLM-Factory - INFO - Initializing LLM instance: gemma4:unrestricted
+2026-06-10 11:42:21,216 - AI-Search-InternetBlock - INFO - Searching web via duckduckgo (limit 40): Jupiter
+2026-06-10 11:42:23,227 - httpx - INFO - HTTP Request: GET https://html.duckduckgo.com/html/?q=Jupiter "HTTP/1.1 200 OK"
+2026-06-10 11:42:23,500 - httpx - INFO - HTTP Request: GET https://en.wikipedia.org/wiki/Jupiter "HTTP/1.1 403 Forbidden"
+2026-06-10 11:42:23,501 - AI-Search-Utils - WARNING - Direct fetch failed for https://en.wikipedia.org/wiki/Jupiter: Client error '403 Forbidden' for url 'https://en.wikipedia.org/wiki/Jupiter'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:42:25,570 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.google.com/search?q=Jupiter "HTTP/1.1 200 OK"
+2026-06-10 11:42:26,701 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://en.wikipedia.org/wiki/Jupiter "HTTP/1.1 200 OK"
+2026-06-10 11:42:26,999 - httpx - INFO - HTTP Request: GET https://science.nasa.gov/jupiter/ "HTTP/1.1 200 OK"
+2026-06-10 11:42:27,349 - httpx - INFO - HTTP Request: GET https://jupyter.org/ "HTTP/1.1 200 OK"
+2026-06-10 11:42:27,657 - httpx - INFO - HTTP Request: GET https://jup.ag/ "HTTP/1.1 200 OK"
+2026-06-10 11:42:28,051 - httpx - INFO - HTTP Request: GET https://login.jupitered.com/login/ "HTTP/1.1 200 OK"
+2026-06-10 11:42:30,166 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://login.jupitered.com/login/ "HTTP/1.1 200 OK"
+2026-06-10 11:42:30,406 - httpx - INFO - HTTP Request: GET https://www.timeanddate.com/astronomy/planets/jupiter/ "HTTP/1.1 403 Forbidden"
+2026-06-10 11:42:30,407 - AI-Search-Utils - WARNING - Direct fetch failed for https://www.timeanddate.com/astronomy/planets/jupiter/: Client error '403 Forbidden' for url 'https://www.timeanddate.com/astronomy/planets/jupiter/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:42:32,618 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.bing.com/search?q=Jupiter "HTTP/1.1 200 OK"
+2026-06-10 11:42:34,378 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.timeanddate.com/astronomy/planets/jupiter/ "HTTP/1.1 200 OK"
+2026-06-10 11:42:34,841 - httpx - INFO - HTTP Request: GET https://www.britannica.com/place/Jupiter-planet "HTTP/1.1 200 OK"
+2026-06-10 11:42:35,602 - httpx - INFO - HTTP Request: GET https://www.jupiter.com/ "HTTP/1.1 200 OK"
+2026-06-10 11:42:36,184 - httpx - INFO - HTTP Request: GET https://jupiter.money/ "HTTP/1.1 200 OK"
+2026-06-10 11:42:36,600 - httpx - INFO - HTTP Request: GET https://atlasof.space/jupiter "HTTP/1.1 200 OK"
+2026-06-10 11:42:45,827 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://atlasof.space/jupiter "HTTP/1.1 200 OK"
+2026-06-10 11:42:45,830 - AI-Search-Utils - INFO - parallel_search: 5 providers → 10 unique results (showing top 40)
+2026-06-10 11:42:45,840 - AI-Search-InternetBlock - INFO - Found 10 source(s). AI will analyze all, but UI will show top 20.
+2026-06-10 11:47:55,533 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-10 11:57:31,781 - AI-Search-Server - INFO - New research request: Neptune (loops: 0, session: None)
+2026-06-10 11:57:34,108 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 11:57:34,127 - AI-LLM-Factory - INFO - Initializing LLM instance: gemma4:unrestricted
+2026-06-10 11:57:34,401 - AI-Search-InternetBlock - INFO - Searching web via duckduckgo (limit 40): Neptune
+2026-06-10 11:57:36,522 - httpx - INFO - HTTP Request: GET https://html.duckduckgo.com/html/?q=Neptune "HTTP/1.1 200 OK"
+2026-06-10 11:57:36,797 - httpx - INFO - HTTP Request: GET https://en.wikipedia.org/wiki/Neptune "HTTP/1.1 403 Forbidden"
+2026-06-10 11:57:36,798 - AI-Search-Utils - WARNING - Direct fetch failed for https://en.wikipedia.org/wiki/Neptune: Client error '403 Forbidden' for url 'https://en.wikipedia.org/wiki/Neptune'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:57:40,226 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.google.com/search?q=Neptune "HTTP/1.1 200 OK"
+2026-06-10 11:57:40,582 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://en.wikipedia.org/wiki/Neptune "HTTP/1.1 200 OK"
+2026-06-10 11:57:40,872 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.bing.com/search?q=Neptune "HTTP/1.1 200 OK"
+2026-06-10 11:57:40,897 - httpx - INFO - HTTP Request: GET https://science.nasa.gov/neptune/ "HTTP/1.1 200 OK"
+2026-06-10 11:57:41,342 - httpx - INFO - HTTP Request: GET https://www.neptune.ua/ "HTTP/1.1 200 OK"
+2026-06-10 11:57:41,586 - httpx - INFO - HTTP Request: GET https://science.nasa.gov/neptune/neptune-facts/ "HTTP/1.1 200 OK"
+2026-06-10 11:57:41,910 - httpx - INFO - HTTP Request: GET https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D0%BF%D1%82%D1%83%D0%BD "HTTP/1.1 403 Forbidden"
+2026-06-10 11:57:41,911 - AI-Search-Utils - WARNING - Direct fetch failed for https://ru.wikipedia.org/wiki/Нептун: Client error '403 Forbidden' for url 'https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D0%BF%D1%82%D1%83%D0%BD'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:57:47,488 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D0%BF%D1%82%D1%83%D0%BD "HTTP/1.1 200 OK"
+2026-06-10 11:57:47,811 - httpx - INFO - HTTP Request: GET https://www.neptune.ua/en "HTTP/1.1 200 OK"
+2026-06-10 11:57:48,163 - httpx - INFO - HTTP Request: GET https://www.neptune.com/ "HTTP/1.1 200 OK"
+2026-06-10 11:57:48,615 - httpx - INFO - HTTP Request: GET https://www.britannica.com/place/Neptune-planet "HTTP/1.1 200 OK"
+2026-06-10 11:57:49,635 - httpx - INFO - HTTP Request: GET https://sciencenotes.org/neptune-facts-most-distant-planet-in-the-solar-system/ "HTTP/1.1 200 OK"
+2026-06-10 11:57:50,287 - httpx - INFO - HTTP Request: GET https://atlasof.space/neptune "HTTP/1.1 200 OK"
+2026-06-10 11:58:00,634 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://atlasof.space/neptune "HTTP/1.1 200 OK"
+2026-06-10 11:58:00,637 - AI-Search-Utils - INFO - parallel_search: 5 providers → 10 unique results (showing top 40)
+2026-06-10 11:58:00,646 - AI-Search-InternetBlock - INFO - Found 10 source(s). AI will analyze all, but UI will show top 20.
+2026-06-10 11:58:34,110 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-10 11:58:34,140 - AI-Search-Server - INFO - Research saved with ID: 15
+2026-06-10 11:59:37,629 - AI-Search-Server - INFO - New research request: Uranus (loops: 0, session: None)
+2026-06-10 11:59:39,953 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 11:59:39,974 - AI-LLM-Factory - INFO - Initializing LLM instance (OpenAI-compatible): gemma4:unrestricted
+2026-06-10 11:59:39,976 - langchain_openai.chat_models._client_utils - INFO - langchain-openai detected system proxy configuration and no explicit `http_socket_options` / `http_client` / `http_async_client` / `openai_proxy`; skipping the custom `httpx` transport so httpx's env-proxy auto-detection applies. Pass `http_socket_options=[...]` to opt back into kernel-level TCP keepalive tuning on top of the env proxy.
+2026-06-10 11:59:40,995 - AI-Search-InternetBlock - INFO - Searching web via duckduckgo (limit 40): Uranus
+2026-06-10 11:59:43,282 - httpx - INFO - HTTP Request: GET https://html.duckduckgo.com/html/?q=Uranus "HTTP/1.1 200 OK"
+2026-06-10 11:59:43,553 - httpx - INFO - HTTP Request: GET https://en.wikipedia.org/wiki/Uranus "HTTP/1.1 403 Forbidden"
+2026-06-10 11:59:43,555 - AI-Search-Utils - WARNING - Direct fetch failed for https://en.wikipedia.org/wiki/Uranus: Client error '403 Forbidden' for url 'https://en.wikipedia.org/wiki/Uranus'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:59:45,858 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.google.com/search?q=Uranus "HTTP/1.1 200 OK"
+2026-06-10 11:59:47,226 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://en.wikipedia.org/wiki/Uranus "HTTP/1.1 200 OK"
+2026-06-10 11:59:47,506 - httpx - INFO - HTTP Request: GET https://science.nasa.gov/uranus/ "HTTP/1.1 200 OK"
+2026-06-10 11:59:47,795 - httpx - INFO - HTTP Request: GET https://science.nasa.gov/uranus/facts/ "HTTP/1.1 200 OK"
+2026-06-10 11:59:48,092 - httpx - INFO - HTTP Request: GET https://en.wikipedia.org/wiki/Uranus_(mythology) "HTTP/1.1 403 Forbidden"
+2026-06-10 11:59:48,094 - AI-Search-Utils - WARNING - Direct fetch failed for https://en.wikipedia.org/wiki/Uranus_(mythology): Client error '403 Forbidden' for url 'https://en.wikipedia.org/wiki/Uranus_(mythology)'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:59:48,227 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.bing.com/search?q=Uranus "HTTP/1.1 200 OK"
+2026-06-10 11:59:51,183 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://en.wikipedia.org/wiki/Uranus_(mythology) "HTTP/1.1 200 OK"
+2026-06-10 11:59:51,437 - httpx - INFO - HTTP Request: GET https://ru.wikipedia.org/wiki/%D0%A3%D1%80%D0%B0%D0%BD_(%D0%BF%D0%BB%D0%B0%D0%BD%D0%B5%D1%82%D0%B0) "HTTP/1.1 403 Forbidden"
+2026-06-10 11:59:51,438 - AI-Search-Utils - WARNING - Direct fetch failed for https://ru.wikipedia.org/wiki/Уран_(планета): Client error '403 Forbidden' for url 'https://ru.wikipedia.org/wiki/%D0%A3%D1%80%D0%B0%D0%BD_(%D0%BF%D0%BB%D0%B0%D0%BD%D0%B5%D1%82%D0%B0)'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 11:59:59,621 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://ru.wikipedia.org/wiki/%D0%A3%D1%80%D0%B0%D0%BD_(%D0%BF%D0%BB%D0%B0%D0%BD%D0%B5%D1%82%D0%B0) "HTTP/1.1 200 OK"
+2026-06-10 11:59:59,924 - httpx - INFO - HTTP Request: GET https://fr.wikipedia.org/wiki/Uranus_(plan%C3%A8te) "HTTP/1.1 403 Forbidden"
+2026-06-10 11:59:59,925 - AI-Search-Utils - WARNING - Direct fetch failed for https://fr.wikipedia.org/wiki/Uranus_(planète): Client error '403 Forbidden' for url 'https://fr.wikipedia.org/wiki/Uranus_(plan%C3%A8te)'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 12:00:05,102 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://fr.wikipedia.org/wiki/Uranus_(plan%C3%A8te) "HTTP/1.1 200 OK"
+2026-06-10 12:00:05,385 - httpx - INFO - HTTP Request: GET https://de.wikipedia.org/wiki/Uranus_(Planet) "HTTP/1.1 403 Forbidden"
+2026-06-10 12:00:05,386 - AI-Search-Utils - WARNING - Direct fetch failed for https://de.wikipedia.org/wiki/Uranus_(Planet): Client error '403 Forbidden' for url 'https://de.wikipedia.org/wiki/Uranus_(Planet)'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 12:00:09,289 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://de.wikipedia.org/wiki/Uranus_(Planet) "HTTP/1.1 200 OK"
+2026-06-10 12:00:09,771 - httpx - INFO - HTTP Request: GET https://www.britannica.com/place/Uranus-planet "HTTP/1.1 200 OK"
+2026-06-10 12:00:10,071 - httpx - INFO - HTTP Request: GET https://www.curseforge.com/minecraft/mc-mods/uranus "HTTP/1.1 403 Forbidden"
+2026-06-10 12:00:10,073 - AI-Search-Utils - WARNING - Direct fetch failed for https://www.curseforge.com/minecraft/mc-mods/uranus: Client error '403 Forbidden' for url 'https://www.curseforge.com/minecraft/mc-mods/uranus'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 12:00:17,354 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.curseforge.com/minecraft/mc-mods/uranus "HTTP/1.1 200 OK"
+2026-06-10 12:00:18,485 - httpx - INFO - HTTP Request: GET https://spaceplace.nasa.gov/all-about-uranus/en/ "HTTP/1.1 200 OK"
+2026-06-10 12:00:18,509 - AI-Search-Utils - INFO - parallel_search: 5 providers → 10 unique results (showing top 40)
+2026-06-10 12:00:18,518 - AI-Search-InternetBlock - INFO - Found 10 source(s). AI will analyze all, but UI will show top 20.
+2026-06-10 12:18:59,781 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:21:51,150 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:22:03,350 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:22:15,547 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:22:27,873 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:22:40,248 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:22:52,669 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:22:52,676 - AI-Search-Server - INFO - New research request: Latest advancements in CRISPR-Cas9 for treating sickle cell anemia (loops: 2, session: None)
+2026-06-10 16:22:55,103 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:22:55,146 - AI-LLM-Factory - INFO - Initializing LLM instance: gemma4:12b (ctx=8k)
+2026-06-10 16:23:05,023 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:23:15,418 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-10 16:23:17,437 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:23:29,864 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:23:42,295 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:23:54,703 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:24:07,140 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:24:19,562 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:24:31,978 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:24:44,434 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:24:56,834 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:25:09,255 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:25:21,665 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:25:34,126 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:25:46,510 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:25:58,923 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:26:11,323 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:26:23,780 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:26:36,194 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:26:48,610 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:27:01,024 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:27:13,490 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:27:25,913 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:27:38,377 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:27:50,764 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:28:03,194 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:28:15,624 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:28:28,043 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:28:40,495 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:28:52,942 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:29:05,363 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:29:17,809 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:29:30,222 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:29:42,662 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:29:44,269 - AI-Search-Server - ERROR - Error during repopulation: No module named 'generate_test_news'
+Traceback (most recent call last):
+  File "E:\projects\Deep_Researcher_PRO\src\main.py", line 463, in repopulate_news
+    from generate_test_news import generate_test_news
+ModuleNotFoundError: No module named 'generate_test_news'
+2026-06-10 16:29:50,559 - AI-Search-InternetBlock - INFO - Searching web via duckduckgo (limit 60): 
+2026-06-10 16:29:52,281 - httpx - INFO - HTTP Request: GET https://html.duckduckgo.com/html/?q= "HTTP/1.1 200 OK"
+2026-06-10 16:29:52,289 - AI-Search-Utils - INFO - DuckDuckGo HTML GET search returned no results; trying Lite GET...
+2026-06-10 16:29:52,764 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.google.com/search?q= "HTTP/1.1 200 OK"
+2026-06-10 16:29:52,765 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.bing.com/search?q= "HTTP/1.1 200 OK"
+2026-06-10 16:29:52,853 - httpx - INFO - HTTP Request: GET https://lite.duckduckgo.com/lite/?q= "HTTP/1.1 200 OK"
+2026-06-10 16:29:52,857 - AI-Search-Utils - INFO - DuckDuckGo Lite GET search returned no results; trying official library...
+2026-06-10 16:29:52,914 - duckduckgo_search.DDGS - INFO - Error to search using bing backend: keywords is mandatory
+2026-06-10 16:29:52,914 - AI-Search-Utils - ERROR - Error in DuckDuckGo official library fallback: keywords is mandatory
+2026-06-10 16:29:52,917 - AI-Search-Utils - INFO - parallel_search: 5 providers → 0 unique results (showing top 60)
+2026-06-10 16:29:52,917 - AI-Search-InternetBlock - INFO - Found 0 source(s). AI will analyze all, but UI will show top 20.
+2026-06-10 16:29:55,109 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:30:07,331 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:30:20,716 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:30:33,699 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:30:46,735 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:30:59,720 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:31:12,741 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:31:25,663 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:31:38,727 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:31:51,006 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:32:03,700 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:32:16,713 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:32:29,694 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:32:42,498 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:32:55,674 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:33:08,763 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:33:21,535 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:33:34,719 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:33:47,691 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:34:00,785 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:34:13,673 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:34:26,694 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:34:39,719 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:34:52,780 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:35:05,592 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:35:18,604 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:35:31,660 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:35:44,616 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:35:57,635 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:36:10,651 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:36:23,689 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:36:36,671 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:36:49,661 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:37:02,681 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:37:15,643 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:37:28,723 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:37:41,692 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:37:54,688 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:38:07,783 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:38:20,693 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:38:33,713 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:38:46,684 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:38:59,687 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:39:12,654 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:39:25,699 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:39:38,743 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:39:51,725 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:40:04,699 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:40:17,668 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:40:30,745 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:40:43,680 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:40:56,689 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:41:09,708 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:41:22,734 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:41:35,730 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:41:48,576 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:42:01,590 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:42:14,759 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:42:27,587 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:42:33,242 - watchfiles.main - INFO - 1 change detected
+2026-06-10 16:42:35,292 - watchfiles.main - INFO - 1 change detected
+2026-06-10 16:42:35,650 - watchfiles.main - INFO - 5 changes detected
+2026-06-10 16:42:40,599 - watchfiles.main - INFO - 1 change detected
+2026-06-10 16:42:45,340 - watchfiles.main - INFO - 1 change detected
+2026-06-10 16:42:45,698 - watchfiles.main - INFO - 5 changes detected
+2026-06-10 16:42:54,296 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:43:01,978 - watchfiles.main - INFO - 1 change detected
+2026-06-10 16:43:03,630 - watchfiles.main - INFO - 1 change detected
+2026-06-10 16:43:08,242 - watchfiles.main - INFO - 5 changes detected
+2026-06-10 16:43:12,186 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:43:24,680 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:43:37,700 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:43:50,682 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:44:03,694 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:44:16,709 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:44:29,676 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:44:42,690 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:44:55,707 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:45:08,737 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:45:21,726 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:45:34,747 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:45:47,711 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:46:00,701 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:46:13,701 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:46:26,687 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:46:39,692 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:46:52,733 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:47:05,699 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:47:18,566 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:47:31,573 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:47:44,737 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:47:57,626 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:48:10,653 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:48:23,649 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:48:36,647 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:48:49,662 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:49:02,692 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:49:15,628 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:49:28,670 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:49:41,696 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:49:54,688 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:50:07,651 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:50:20,686 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:50:33,712 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:50:46,655 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:50:59,687 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:51:12,658 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:51:25,665 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:51:38,672 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:51:51,705 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:52:04,693 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:52:17,676 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:52:30,665 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:52:43,665 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:52:56,691 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:53:09,664 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:53:22,716 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:53:26,655 - watchfiles.main - INFO - 1 change detected
+2026-06-10 16:53:28,386 - watchfiles.main - INFO - 1 change detected
+2026-06-10 16:53:33,618 - watchfiles.main - INFO - 5 changes detected
+2026-06-10 16:53:37,628 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:53:50,686 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:54:03,668 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:54:16,731 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:54:29,735 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:54:42,714 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:54:55,714 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:55:08,749 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:55:21,603 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:55:31,025 - watchfiles.main - INFO - 2 changes detected
+2026-06-10 16:55:32,517 - watchfiles.main - INFO - 1 change detected
+2026-06-10 16:55:37,226 - watchfiles.main - INFO - 5 changes detected
+2026-06-10 16:55:41,993 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:55:54,536 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:56:07,787 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:56:20,690 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:56:33,739 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:56:46,707 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:58:04,457 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:58:14,569 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:58:26,921 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:58:34,415 - AI-Search-Server - INFO - New research request: Останні новини про OpenAI (loops: 2, session: None)
+2026-06-10 16:58:37,198 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:58:39,242 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:58:39,286 - AI-LLM-Factory - INFO - Initializing LLM instance: gemma4:12b (ctx=8k)
+2026-06-10 16:58:40,074 - AI-Search-InternetBlock - INFO - Searching web via duckduckgo (limit 60): Останні новини про OpenAI 2026
+2026-06-10 16:58:42,605 - httpx - INFO - HTTP Request: GET https://html.duckduckgo.com/html/?q=%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%96+%D0%BD%D0%BE%D0%B2%D0%B8%D0%BD%D0%B8+%D0%BF%D1%80%D0%BE+OpenAI+2026 "HTTP/1.1 200 OK"
+2026-06-10 16:58:42,643 - AI-Search-Utils - INFO - DuckDuckGo HTML GET search returned no results; trying Lite GET...
+2026-06-10 16:58:43,896 - httpx - INFO - HTTP Request: GET https://lite.duckduckgo.com/lite/?q=%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%96+%D0%BD%D0%BE%D0%B2%D0%B8%D0%BD%D0%B8+%D0%BF%D1%80%D0%BE+OpenAI+2026 "HTTP/1.1 200 OK"
+2026-06-10 16:58:43,901 - AI-Search-Utils - INFO - DuckDuckGo Lite GET search returned no results; trying official library...
+2026-06-10 16:58:44,213 - primp - INFO - response: https://www.bing.com/search?q=%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%96+%D0%BD%D0%BE%D0%B2%D0%B8%D0%BD%D0%B8+%D0%BF%D1%80%D0%BE+OpenAI+2026 200
+2026-06-10 16:58:45,118 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.google.com/search?q=%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%96+%D0%BD%D0%BE%D0%B2%D0%B8%D0%BD%D0%B8+%D0%BF%D1%80%D0%BE+OpenAI+2026 "HTTP/1.1 200 OK"
+2026-06-10 16:58:46,471 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.bing.com/search?q=%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%96+%D0%BD%D0%BE%D0%B2%D0%B8%D0%BD%D0%B8+%D0%BF%D1%80%D0%BE+OpenAI+2026 "HTTP/1.1 200 OK"
+2026-06-10 16:58:46,472 - AI-Search-Utils - INFO - parallel_search: 5 providers → 0 unique results (showing top 60)
+2026-06-10 16:58:46,472 - AI-Search-InternetBlock - INFO - No results with year. Retrying with original query: Останні новини про OpenAI
+2026-06-10 16:58:48,921 - httpx - INFO - HTTP Request: GET https://html.duckduckgo.com/html/?q=%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%96+%D0%BD%D0%BE%D0%B2%D0%B8%D0%BD%D0%B8+%D0%BF%D1%80%D0%BE+OpenAI "HTTP/1.1 200 OK"
+2026-06-10 16:58:48,923 - AI-Search-Utils - INFO - DuckDuckGo HTML GET search returned no results; trying Lite GET...
+2026-06-10 16:58:49,460 - httpx - INFO - HTTP Request: GET https://lite.duckduckgo.com/lite/?q=%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%96+%D0%BD%D0%BE%D0%B2%D0%B8%D0%BD%D0%B8+%D0%BF%D1%80%D0%BE+OpenAI "HTTP/1.1 202 Accepted"
+2026-06-10 16:58:49,470 - AI-Search-Utils - INFO - DuckDuckGo Lite GET search returned no results; trying official library...
+2026-06-10 16:58:49,638 - primp - INFO - response: https://www.bing.com/search?q=%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%96+%D0%BD%D0%BE%D0%B2%D0%B8%D0%BD%D0%B8+%D0%BF%D1%80%D0%BE+OpenAI 200
+2026-06-10 16:58:51,778 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:58:52,901 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.google.com/search?q=%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%96+%D0%BD%D0%BE%D0%B2%D0%B8%D0%BD%D0%B8+%D0%BF%D1%80%D0%BE+OpenAI "HTTP/1.1 200 OK"
+2026-06-10 16:58:54,173 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.bing.com/search?q=%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%96+%D0%BD%D0%BE%D0%B2%D0%B8%D0%BD%D0%B8+%D0%BF%D1%80%D0%BE+OpenAI "HTTP/1.1 200 OK"
+2026-06-10 16:58:54,175 - AI-Search-Utils - INFO - parallel_search: 5 providers → 0 unique results (showing top 60)
+2026-06-10 16:58:54,176 - AI-Search-InternetBlock - INFO - Found 0 source(s). AI will analyze all, but UI will show top 20.
+2026-06-10 16:59:04,143 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:59:16,591 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 16:59:29,026 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:05:14,403 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:05:14,410 - AI-Search-Server - INFO - New research request: Останні новини про OpenAI (loops: 0, session: None)
+2026-06-10 17:05:17,019 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:05:17,061 - AI-LLM-Factory - INFO - Initializing LLM instance: gemma4:12b (ctx=8k)
+2026-06-10 17:05:17,861 - AI-Search-InternetBlock - INFO - Searching web via duckduckgo (limit 40): Останні новини про OpenAI 2026
+2026-06-10 17:05:20,332 - httpx - INFO - HTTP Request: GET https://html.duckduckgo.com/html/?q=%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%96+%D0%BD%D0%BE%D0%B2%D0%B8%D0%BD%D0%B8+%D0%BF%D1%80%D0%BE+OpenAI+2026 "HTTP/1.1 200 OK"
+2026-06-10 17:05:20,368 - AI-Search-Utils - INFO - DuckDuckGo HTML GET search returned no results; trying Lite GET...
+2026-06-10 17:05:21,526 - httpx - INFO - HTTP Request: GET https://lite.duckduckgo.com/lite/?q=%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%96+%D0%BD%D0%BE%D0%B2%D0%B8%D0%BD%D0%B8+%D0%BF%D1%80%D0%BE+OpenAI+2026 "HTTP/1.1 200 OK"
+2026-06-10 17:05:21,531 - AI-Search-Utils - INFO - DuckDuckGo Lite GET search returned no results; trying official library...
+2026-06-10 17:05:21,780 - primp - INFO - response: https://www.bing.com/search?q=%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%96+%D0%BD%D0%BE%D0%B2%D0%B8%D0%BD%D0%B8+%D0%BF%D1%80%D0%BE+OpenAI+2026 200
+2026-06-10 17:05:23,165 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.google.com/search?q=%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%96+%D0%BD%D0%BE%D0%B2%D0%B8%D0%BD%D0%B8+%D0%BF%D1%80%D0%BE+OpenAI+2026 "HTTP/1.1 200 OK"
+2026-06-10 17:05:24,929 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.bing.com/search?q=%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%96+%D0%BD%D0%BE%D0%B2%D0%B8%D0%BD%D0%B8+%D0%BF%D1%80%D0%BE+OpenAI+2026 "HTTP/1.1 200 OK"
+2026-06-10 17:05:24,933 - AI-Search-Utils - INFO - parallel_search: 5 providers → 0 unique results (showing top 40)
+2026-06-10 17:05:24,934 - AI-Search-InternetBlock - INFO - No results with year. Retrying with original query: Останні новини про OpenAI
+2026-06-10 17:05:26,804 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:05:27,231 - httpx - INFO - HTTP Request: GET https://html.duckduckgo.com/html/?q=%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%96+%D0%BD%D0%BE%D0%B2%D0%B8%D0%BD%D0%B8+%D0%BF%D1%80%D0%BE+OpenAI "HTTP/1.1 200 OK"
+2026-06-10 17:05:27,236 - AI-Search-Utils - INFO - DuckDuckGo HTML GET search returned no results; trying Lite GET...
+2026-06-10 17:05:28,350 - httpx - INFO - HTTP Request: GET https://lite.duckduckgo.com/lite/?q=%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%96+%D0%BD%D0%BE%D0%B2%D0%B8%D0%BD%D0%B8+%D0%BF%D1%80%D0%BE+OpenAI "HTTP/1.1 200 OK"
+2026-06-10 17:05:28,356 - AI-Search-Utils - INFO - DuckDuckGo Lite GET search returned no results; trying official library...
+2026-06-10 17:05:28,507 - primp - INFO - response: https://www.bing.com/search?q=%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%96+%D0%BD%D0%BE%D0%B2%D0%B8%D0%BD%D0%B8+%D0%BF%D1%80%D0%BE+OpenAI 200
+2026-06-10 17:05:31,772 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.bing.com/search?q=%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%96+%D0%BD%D0%BE%D0%B2%D0%B8%D0%BD%D0%B8+%D0%BF%D1%80%D0%BE+OpenAI "HTTP/1.1 200 OK"
+2026-06-10 17:05:33,611 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.google.com/search?q=%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%96+%D0%BD%D0%BE%D0%B2%D0%B8%D0%BD%D0%B8+%D0%BF%D1%80%D0%BE+OpenAI "HTTP/1.1 200 OK"
+2026-06-10 17:05:33,617 - AI-Search-Utils - INFO - parallel_search: 5 providers → 0 unique results (showing top 40)
+2026-06-10 17:05:33,618 - AI-Search-InternetBlock - INFO - Found 0 source(s). AI will analyze all, but UI will show top 20.
+2026-06-10 17:05:39,213 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:05:51,674 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:06:04,099 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:06:16,497 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:06:28,927 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:06:41,350 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:06:53,754 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:06:53,759 - AI-Search-Server - INFO - New research request: Реліз Gemma 4 від Google (loops: 0, session: None)
+2026-06-10 17:06:56,128 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:06:56,189 - AI-Search-InternetBlock - INFO - Searching web via duckduckgo (limit 40): Реліз Gemma 4 від Google
+2026-06-10 17:06:58,843 - httpx - INFO - HTTP Request: GET https://html.duckduckgo.com/html/?q=%D0%A0%D0%B5%D0%BB%D1%96%D0%B7+Gemma+4+%D0%B2%D1%96%D0%B4+Google "HTTP/1.1 200 OK"
+2026-06-10 17:06:58,847 - AI-Search-Utils - INFO - DuckDuckGo HTML GET search returned no results; trying Lite GET...
+2026-06-10 17:07:00,112 - httpx - INFO - HTTP Request: GET https://lite.duckduckgo.com/lite/?q=%D0%A0%D0%B5%D0%BB%D1%96%D0%B7+Gemma+4+%D0%B2%D1%96%D0%B4+Google "HTTP/1.1 200 OK"
+2026-06-10 17:07:00,115 - AI-Search-Utils - INFO - DuckDuckGo Lite GET search returned no results; trying official library...
+2026-06-10 17:07:00,287 - primp - INFO - response: https://www.bing.com/search?q=%D0%A0%D0%B5%D0%BB%D1%96%D0%B7+Gemma+4+%D0%B2%D1%96%D0%B4+Google 200
+2026-06-10 17:07:00,931 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.google.com/search?q=%D0%A0%D0%B5%D0%BB%D1%96%D0%B7+Gemma+4+%D0%B2%D1%96%D0%B4+Google "HTTP/1.1 200 OK"
+2026-06-10 17:07:02,829 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.bing.com/search?q=%D0%A0%D0%B5%D0%BB%D1%96%D0%B7+Gemma+4+%D0%B2%D1%96%D0%B4+Google "HTTP/1.1 200 OK"
+2026-06-10 17:07:02,832 - AI-Search-Utils - INFO - parallel_search: 5 providers → 0 unique results (showing top 40)
+2026-06-10 17:07:02,833 - AI-Search-InternetBlock - INFO - Found 0 source(s). AI will analyze all, but UI will show top 20.
+2026-06-10 17:07:06,121 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:07:18,476 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:07:30,808 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:07:43,196 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:11:42,403 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:11:48,998 - AI-Search-Server - INFO - New research request: Що нового у розвитку мовних моделей? (loops: 2, session: None)
+2026-06-10 17:11:51,798 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:11:51,850 - AI-LLM-Factory - INFO - Initializing LLM instance: gemma4:12b (ctx=8k)
+2026-06-10 17:11:52,932 - AI-Search-InternetBlock - INFO - Searching web via duckduckgo (limit 60): нового у розвитку мовних моделей?
+2026-06-10 17:11:54,978 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:11:55,334 - httpx - INFO - HTTP Request: GET https://html.duckduckgo.com/html/?q=%D0%BD%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE+%D1%83+%D1%80%D0%BE%D0%B7%D0%B2%D0%B8%D1%82%D0%BA%D1%83+%D0%BC%D0%BE%D0%B2%D0%BD%D0%B8%D1%85+%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B5%D0%B9%3F "HTTP/1.1 200 OK"
+2026-06-10 17:11:56,280 - httpx - INFO - HTTP Request: GET https://proit.com.ua/news/yak-pratsyuyut-movni-modeli-yih/ "HTTP/1.1 200 OK"
+2026-06-10 17:11:58,365 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.google.com/search?q=%D0%BD%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE+%D1%83+%D1%80%D0%BE%D0%B7%D0%B2%D0%B8%D1%82%D0%BA%D1%83+%D0%BC%D0%BE%D0%B2%D0%BD%D0%B8%D1%85+%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B5%D0%B9%3F "HTTP/1.1 200 OK"
+2026-06-10 17:11:58,746 - httpx - INFO - HTTP Request: GET https://www.aup.com.ua/news/yak-veliki-movni-modeli-zminyuyut-media/ "HTTP/1.1 200 OK"
+2026-06-10 17:12:00,540 - httpx - INFO - HTTP Request: GET https://ua.linkedin.com/pulse/llm-top-10-most-powerful-large-language-models-2024-ndtqf?tl=uk "HTTP/1.1 200 OK"
+2026-06-10 17:12:01,334 - httpx - INFO - HTTP Request: GET https://science.lpnu.ua/sites/default/files/journal-paper/2024/oct/36178/626.pdf "HTTP/1.1 200 OK"
+2026-06-10 17:12:01,990 - httpx - INFO - HTTP Request: GET https://arand.com.ua/2025/03/23/yaki-perspektyvy-rozvytku-gpt-5-ta-novykh-movnykh-modeley-u-2025-rotsi/ "HTTP/1.1 429 Too Many Requests"
+2026-06-10 17:12:01,991 - AI-Search-Utils - WARNING - Direct fetch failed for https://arand.com.ua/2025/03/23/yaki-perspektyvy-rozvytku-gpt-5-ta-novykh-movnykh-modeley-u-2025-rotsi/: Client error '429 Too Many Requests' for url 'https://arand.com.ua/2025/03/23/yaki-perspektyvy-rozvytku-gpt-5-ta-novykh-movnykh-modeley-u-2025-rotsi/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+2026-06-10 17:12:04,323 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.bing.com/search?q=%D0%BD%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE+%D1%83+%D1%80%D0%BE%D0%B7%D0%B2%D0%B8%D1%82%D0%BA%D1%83+%D0%BC%D0%BE%D0%B2%D0%BD%D0%B8%D1%85+%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B5%D0%B9%3F "HTTP/1.1 200 OK"
+2026-06-10 17:12:07,343 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:12:09,269 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://arand.com.ua/2025/03/23/yaki-perspektyvy-rozvytku-gpt-5-ta-novykh-movnykh-modeley-u-2025-rotsi/ "HTTP/1.1 200 OK"
+2026-06-10 17:12:09,994 - httpx - INFO - HTTP Request: GET https://thetransmitted.com/ai/novi-tendencziyi-v-doslidzhennyah-velykyh-movnyh-modelej/ "HTTP/1.1 200 OK"
+2026-06-10 17:12:11,083 - httpx - INFO - HTTP Request: GET https://ir.lib.vntu.edu.ua/bitstream/handle/123456789/38271/135339.pdf "HTTP/1.1 200 "
+2026-06-10 17:12:12,375 - httpx - INFO - HTTP Request: GET https://top-ai.com.ua/news/velyki-movni-modeli/ "HTTP/1.1 200 OK"
+2026-06-10 17:12:13,073 - httpx - INFO - HTTP Request: GET https://www.ranktracker.com/uk/blog/from-gpt-to-gemini-evolution-of-language-models/ "HTTP/1.1 200 OK"
+2026-06-10 17:12:13,519 - httpx - INFO - HTTP Request: GET https://jai.in.ua/archive/2025/2025-1-5.pdf "HTTP/1.1 200 OK"
+2026-06-10 17:12:13,651 - AI-Search-Utils - INFO - parallel_search: 5 providers → 10 unique results (showing top 60)
+2026-06-10 17:12:13,679 - AI-Search-InternetBlock - INFO - Found 10 source(s). AI will analyze all, but UI will show top 20.
+2026-06-10 17:12:19,739 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:12:32,181 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:12:34,324 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-10 17:12:34,361 - AI-Search-Server - INFO - Research saved with ID: 16
+2026-06-10 17:12:44,628 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:12:57,081 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:13:09,517 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:13:22,718 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:20:02,383 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:20:07,122 - AI-Search-Server - INFO - New research request: Що нового у розвитку мовних моделей? (loops: 0, session: None)
+2026-06-10 17:20:07,151 - AI-Search-Server - INFO - Cache hit for query: Що нового у розвитку мовних моделей?
+2026-06-10 17:20:14,815 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:20:24,491 - AI-Search-Server - INFO - New research request: Остання модель від компанії антропік (loops: 0, session: 16)
+2026-06-10 17:20:27,300 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:20:27,424 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:20:27,481 - AI-LLM-Factory - INFO - Initializing LLM instance: gemma4:12b (ctx=8k)
+2026-06-10 17:20:28,266 - AI-Search-InternetBlock - INFO - Searching web via duckduckgo (limit 40): Остання модель від компанії антропік
+2026-06-10 17:20:30,605 - httpx - INFO - HTTP Request: GET https://html.duckduckgo.com/html/?q=%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%8F+%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C+%D0%B2%D1%96%D0%B4+%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D1%96%D1%97+%D0%B0%D0%BD%D1%82%D1%80%D0%BE%D0%BF%D1%96%D0%BA "HTTP/1.1 200 OK"
+2026-06-10 17:20:31,319 - httpx - INFO - HTTP Request: GET https://claude.com/ "HTTP/1.1 200 OK"
+2026-06-10 17:20:32,238 - httpx - INFO - HTTP Request: GET https://quovadis.in.ua/n/ek/3253-claude-opus.html "HTTP/1.1 200 OK"
+2026-06-10 17:20:33,058 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.google.com/search?q=%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%8F+%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C+%D0%B2%D1%96%D0%B4+%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D1%96%D1%97+%D0%B0%D0%BD%D1%82%D1%80%D0%BE%D0%BF%D1%96%D0%BA "HTTP/1.1 200 OK"
+2026-06-10 17:20:35,025 - httpx - INFO - HTTP Request: GET https://itc.ua/ua/tag/anthropic/ "HTTP/1.1 200 OK"
+2026-06-10 17:20:36,261 - httpx - INFO - HTTP Request: GET https://www.gate.com/uk/news/detail/anthropics-latest-ai-model-is-restricted-to-use-by-only-40-institutions-due-20261073 "HTTP/1.1 200 OK"
+2026-06-10 17:20:36,567 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.bing.com/search?q=%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%8F+%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C+%D0%B2%D1%96%D0%B4+%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D1%96%D1%97+%D0%B0%D0%BD%D1%82%D1%80%D0%BE%D0%BF%D1%96%D0%BA "HTTP/1.1 200 OK"
+2026-06-10 17:20:37,007 - httpx - INFO - HTTP Request: GET https://forbes.ua/svit/nova-era-khakerstva-chi-genialniy-marketing-chomu-nova-model-claude-mythos-viklikala-khvilyuvannya-finansovikh-regulyatoriv-ta-bilogo-domu-analiz-mizhnarodnikh-media-21042026-38136 "HTTP/1.1 200 OK"
+2026-06-10 17:20:37,536 - httpx - INFO - HTTP Request: GET https://meta.ua/uk/lifestyle/technologies/nova-model-shi-vid-anthropic-vimagae-chesnosti-vid-testuvalnikiv-901917/ "HTTP/1.1 403 Forbidden"
+2026-06-10 17:20:37,538 - AI-Search-Utils - WARNING - Direct fetch failed for https://meta.ua/uk/lifestyle/technologies/nova-model-shi-vid-anthropic-vimagae-chesnosti-vid-testuvalnikiv-901917/: Client error '403 Forbidden' for url 'https://meta.ua/uk/lifestyle/technologies/nova-model-shi-vid-anthropic-vimagae-chesnosti-vid-testuvalnikiv-901917/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-06-10 17:20:40,018 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:20:44,112 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://meta.ua/uk/lifestyle/technologies/nova-model-shi-vid-anthropic-vimagae-chesnosti-vid-testuvalnikiv-901917/ "HTTP/1.1 200 OK"
+2026-06-10 17:20:45,085 - httpx - INFO - HTTP Request: GET https://skimai.com/uk/%D0%B0%D0%BD%D1%82%D1%80%D0%BE%D0%BF%D0%BD%D0%B8%D0%B9-%D0%BA%D0%BB%D0%BE%D0%B4-3-%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4-%D0%B0%D0%B9-%D1%81%D1%82%D0%B0%D1%80%D1%82%D0%B0%D0%BF-%D1%89%D0%BE-%D1%81%D1%82/ "HTTP/1.1 200 OK"
+2026-06-10 17:20:46,681 - httpx - INFO - HTTP Request: GET https://www.anthropic.com/ "HTTP/1.1 200 OK"
+2026-06-10 17:20:47,279 - httpx - INFO - HTTP Request: GET https://xpert.digital/uk/%D0%B2%D0%B5%D1%80%D1%81%D1%96%D1%97-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%96-claude-anthropic/ "HTTP/1.1 200 OK"
+2026-06-10 17:20:52,507 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:20:52,652 - httpx - INFO - HTTP Request: GET https://all-news.com.ua/antropik-predstavyv-novi-modeli-claude-4-ai/ "HTTP/1.1 200 OK"
+2026-06-10 17:20:52,745 - AI-Search-Utils - INFO - parallel_search: 5 providers → 10 unique results (showing top 40)
+2026-06-10 17:20:52,760 - AI-Search-InternetBlock - INFO - Found 10 source(s). AI will analyze all, but UI will show top 20.
+2026-06-10 17:21:04,916 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:21:12,759 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-10 17:21:12,790 - AI-Search-Server - INFO - Research saved with ID: 16
+2026-06-10 17:21:17,321 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:21:30,675 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:42:17,816 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:42:30,244 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:42:30,252 - AI-Search-Server - INFO - New research request: Реліз Gemma 4 від Google (loops: 2, session: None)
+2026-06-10 17:42:32,928 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:42:32,988 - AI-LLM-Factory - INFO - Initializing LLM instance: gemma4:12b (ctx=8k)
+2026-06-10 17:42:33,693 - AI-Search-InternetBlock - INFO - Searching web via duckduckgo (limit 60): Реліз Gemma 4 від Google
+2026-06-10 17:42:36,243 - httpx - INFO - HTTP Request: GET https://html.duckduckgo.com/html/?q=%D0%A0%D0%B5%D0%BB%D1%96%D0%B7+Gemma+4+%D0%B2%D1%96%D0%B4+Google "HTTP/1.1 200 OK"
+2026-06-10 17:42:36,736 - httpx - INFO - HTTP Request: GET https://deepmind.google/models/gemma/gemma-4/ "HTTP/1.1 200 OK"
+2026-06-10 17:42:38,128 - httpx - INFO - HTTP Request: GET https://ai.google.dev/gemma/docs/releases "HTTP/1.1 200 OK"
+2026-06-10 17:42:38,887 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.google.com/search?q=%D0%A0%D0%B5%D0%BB%D1%96%D0%B7+Gemma+4+%D0%B2%D1%96%D0%B4+Google "HTTP/1.1 200 OK"
+2026-06-10 17:42:38,906 - httpx - INFO - HTTP Request: GET https://gemma4.com/ "HTTP/1.1 200 OK"
+2026-06-10 17:42:40,082 - httpx - INFO - HTTP Request: GET https://webscraft.org/blog/gemma-4-povniy-oglyad-rozmiri-litsenziya-porivnyannya-z-gemma-3 "HTTP/1.1 200 OK"
+2026-06-10 17:42:42,032 - httpx - INFO - HTTP Request: GET https://habr.com/ru/articles/1037768/ "HTTP/1.1 200 OK"
+2026-06-10 17:42:42,050 - httpx - INFO - HTTP Request: GET https://r.jina.ai/http://www.bing.com/search?q=%D0%A0%D0%B5%D0%BB%D1%96%D0%B7+Gemma+4+%D0%B2%D1%96%D0%B4+Google "HTTP/1.1 200 OK"
+2026-06-10 17:42:42,666 - httpx - INFO - HTTP Request: GET https://mezha.ua/news/google-gemma-4-12b-311940/ "HTTP/1.1 200 OK"
+2026-06-10 17:42:42,929 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:42:43,329 - httpx - INFO - HTTP Request: GET https://ain.ua/2026/06/04/gemma-4-12b/ "HTTP/1.1 200 OK"
+2026-06-10 17:42:43,987 - httpx - INFO - HTTP Request: GET https://cloud.google.com/blog/products/ai-machine-learning/gemma-4-available-on-google-cloud "HTTP/1.1 200 OK"
+2026-06-10 17:42:46,638 - httpx - INFO - HTTP Request: GET https://highload.tech/uk/zustrichajte-gemma-4-nove-pokolinnya-vidkrytyh-modelej-google-dlya-avtonomnogo-vajb-koduvannya/ "HTTP/1.1 200 OK"
+2026-06-10 17:42:47,532 - httpx - INFO - HTTP Request: GET https://www.tecnoloblog.com/uk/%D0%A9%D0%BE-%D1%82%D0%B0%D0%BA%D0%B5-%D0%94%D0%B6%D0%B5%D0%BC%D0%BC%D0%B0-4/ "HTTP/1.1 200 OK"
+2026-06-10 17:42:47,646 - AI-Search-Utils - INFO - parallel_search: 5 providers → 10 unique results (showing top 60)
+2026-06-10 17:42:47,666 - AI-Search-InternetBlock - INFO - Found 10 source(s). AI will analyze all, but UI will show top 20.
+2026-06-10 17:42:55,303 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:43:07,646 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:43:08,262 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-10 17:43:08,297 - AI-Search-Server - INFO - Research saved with ID: 17
+2026-06-10 17:43:20,023 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:43:32,440 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:43:44,889 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:43:57,337 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:44:09,770 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"
+2026-06-10 17:44:22,139 - httpx - INFO - HTTP Request: GET http://localhost:11434 "HTTP/1.1 200 OK"

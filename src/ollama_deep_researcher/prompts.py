@@ -49,3 +49,20 @@ reflection_instructions = """You are the Apex-Auditor, the reflection node of a 
 Analyze the current research state and determine if there are critical knowledge gaps preventing a complete answer.
 Return ONLY a JSON object with two keys: "knowledge_gap" (string) and "follow_up_query" (string).
 If the research is comprehensive and satisfactory, set follow_up_query to "COMPLETE"."""
+
+json_mode_query_instructions = """
+Please provide your output in JSON format with a 'query' key for the search query and a 'rationale' key explaining why this query was chosen.
+"""
+
+tool_calling_query_instructions = """
+Please use the provided 'Query' tool to submit your search query.
+"""
+
+json_mode_reflection_instructions = """
+Please provide your output in JSON format with 'knowledge_gap' and 'follow_up_query' keys.
+If no further research is needed, set 'follow_up_query' to 'COMPLETE'.
+"""
+
+tool_calling_reflection_instructions = """
+Please use the provided 'FollowUpQuery' tool to submit your reflection results.
+"""

@@ -189,7 +189,12 @@ def get_llm(configurable: Configuration):
 
 # Nodes
 def generate_query(state: SummaryState, config: RunnableConfig):
-    """LangGraph node that generates a search query based on the research topic."""
+    """
+    LangGraph node: Generates an optimized search query based on the current research state.
+    
+    This node uses the LLM to analyze the research topic and identify the most 
+    effective search terms, potentially using advanced search operators.
+    """
     current_date = get_current_date()
     current_year = get_current_year()
     formatted_prompt = query_writer_instructions.format(
@@ -343,6 +348,7 @@ def summarize_sources(state: SummaryState, config: RunnableConfig):
     )
 
     running_summary = result.content
+    logger.info("Raw LLM Summary Response (first 100 chars): %s", running_summary[:100].replace("\n", " "))
     if configurable.strip_thinking_tokens:
         running_summary = strip_thinking_tokens(running_summary)
 

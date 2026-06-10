@@ -24,22 +24,16 @@ class LLMFactory:
         cache_key = f"{model_name}-{temperature}-{num_ctx}-{num_gpu}-{format}-{resolved_base}"
         
         if cache_key not in LLMFactory._instances:
-            logger.info("Initializing UNRESTRICTED LLM instance: %s (ctx=%dk, temp=%.2f)", model_name, num_ctx // 1024, temperature)
+            logger.info("Initializing LLM instance: %s (ctx=%dk)", model_name, num_ctx // 1024)
             
-            # Примусове налаштування для Ollama API через kwargs
             kwargs = dict(
                 base_url=resolved_base,
                 model=model_name,
                 temperature=temperature,
-                top_p=settings.top_p,
-                num_gpu=num_gpu,
                 num_ctx=num_ctx,
                 num_predict=settings.max_tokens,
                 num_thread=12,
                 keep_alive=-1,
-                # Force options via provider-specific parameters
-                client_kwargs={"timeout": 600.0},
-                stop=["<|im_end|>", "<|end|>"]  # Додати стоп-токени
             )
             
             if format is not None:
