@@ -16,6 +16,60 @@ from langsmith import traceable
 from tavily import TavilyClient
 from duckduckgo_search import DDGS
 from langchain_community.utilities import SearxSearchWrapper
+from Bio import Entrez
+
+# NCBI requires an email for Entrez
+Entrez.email = os.getenv("NCBI_EMAIL", "researcher@example.com")
+
+# ... (keep existing code)
+
+def pubmed_search(query: str, max_results: int = 10) -> Dict[str, Any]:
+    """
+    Search PubMed for medical and biological research papers.
+    Uses NCBI Entrez API to fetch high-quality peer-reviewed data.
+    """
+    try:
+        logger.info(f"Searching PubMed for: {query}")
+        # 1. Search for IDs
+        handle = Entrez.esearch(db="pubmed", term=query, retmax=max_results)
+        record = Entrez.read(handle)
+        handle.close()
+        
+        id_list = record.get("IdList", [])
+        if not id_list:
+            return {"results": []}
+            
+        # 2. Fetch Summaries
+        handle = Entrez.esummary(db="pubmed", id=",".join(id_list))
+        summaries = Entrez.read(handle)
+        handle.close()
+        
+        results = []
+        for i, summary in enumerate(summaries):
+            pmid = id_list[i]
+            title = summary.get("Title", "Unknown Title")
+            authors = ", ".join(summary.get("AuthorList", []))
+            source = summary.get("Source", "Unknown Source")
+            pub_date = summary.get("PubDate", "Unknown Date")
+            
+            content = f"Authors: {authors}\nJournal: {source}\nDate: {pub_date}\n\n"
+            # In a real scenario, we might want to fetch the abstract here too
+            
+            results.append({
+                "title": title,
+                "url": f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/",
+                "content": content,
+                "raw_content": f"Title: {title}\n{content}",
+                "source_id": f"PMID:{pmid}",
+                "relevance_score": 1.0 - (i * 0.05),
+                "fetched_at": datetime.now(timezone.utc).isoformat()
+            })
+            
+        return {"results": results}
+    except Exception as e:
+        logger.error(f"PubMed search failed: {e}")
+        return {"results": []}
+
 
 # Налаштування логування
 logger = logging.getLogger("AI-Search-Utils")
@@ -947,6 +1001,7 @@ def parallel_search(
         ("duckduckgo", lambda: duckduckgo_search(query, max_results=max_results, fetch_full_page=fetch_full_page)),
         ("google_api", lambda: google_api_search(query, max_results=5)),
         ("shodan", lambda: shodan_search(query)),
+        ("pubmed", lambda: pubmed_search(query, max_results=10)),
     ]
 
     if os.getenv("TAVILY_API_KEY"):

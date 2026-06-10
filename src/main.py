@@ -57,10 +57,10 @@ mimetypes.add_type("application/javascript", ".js")
 database.init_db()
 
 app = FastAPI(
-    title="AI Розумний Пошук",
-    description="Веб-платформа для розумного пошуку актуальної інформації у сфері АІ",
-    version="1.1.0",
-    docs_url="/docs",  # Увімкнено для Enterprise
+    title="Venator: Autonomous Intelligence Engine",
+    description="Advanced autonomous research platform for Technical and Biomedical analysis.",
+    version="2.0.0",
+    docs_url="/docs",
     redoc_url="/redoc"
 )
 

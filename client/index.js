@@ -286,19 +286,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const stepsHtml = [
       '<li class="step-item active" id="initial-step">',
       '<span class="step-dot"></span>',
-      '<span class="step-label">Аналіз запиту ШІ-агентом</span>',
+      '<span class="step-label">AI Agent analyzing query</span>',
       '</li>'
     ].join('');
 
     const box = el('div', { className: 'thinking-box', id: 'thinking-indicator', html: [
       '<div class="thinking-spinner"></div>',
       '<div class="thinking-text">',
-      '<h4 id="thinking-title">Ініціалізація дослідження...</h4>',
-      '<p id="thinking-desc">Аналіз запиту та підготовка пошуку</p>',
+      '<h4 id="thinking-title">Initializing Research...</h4>',
+      '<p id="thinking-desc">Analyzing request and preparing search strategy</p>',
       '<div class="thinking-progress"><div class="thinking-progress-fill" id="thinking-progress-fill" style="width:10%"></div></div>',
       '<div class="steps-accordion open" id="steps-accordion">',
       '<div class="steps-accordion-header" id="steps-accordion-header">',
-      '<span>Хронологія дій пошуку</span>',
+      '<span>Research Timeline</span>',
       '<i data-lucide="chevron-down"></i>',
       '</div>',
       '<div class="steps-accordion-body"><ul class="steps-list" id="steps-list">',
@@ -333,18 +333,18 @@ document.addEventListener('DOMContentLoaded', () => {
       const desc = _('thinking-desc');
       if (fill) fill.style.width = Math.min(progress, 100) + '%';
       if (window.__thinkingProgress.done && title && desc) {
-        title.textContent = 'Завершено';
-        desc.textContent = 'Відповідь згенеровано';
+        title.textContent = 'Completed';
+        desc.textContent = 'Response generated';
         if (progress >= 100 && window.__thinkingTimeout) {
           clearTimeout(window.__thinkingTimeout);
           window.__thinkingTimeout = null;
         }
       } else if (progress > 30 && progress < 60 && title && desc) {
-        title.textContent = 'Пошук в Інтернеті...';
-        desc.textContent = 'Сканування надійних джерел...';
+        title.textContent = 'Scanning Web...';
+        desc.textContent = 'Gathering intelligence from multiple sources...';
       } else if (progress >= 60 && title && desc) {
-        title.textContent = 'Генерація відповіді...';
-        desc.textContent = 'Синтез знайденого вмісту...';
+        title.textContent = 'Generating Analysis...';
+        desc.textContent = 'Synthesizing gathered data...';
       }
     }, 800);
   }
@@ -409,9 +409,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!researchId) { scrollToBottom(); return; }
 
     const actionBar = el('div', { className: 'message-actions', html: [
-      '<button class="action-btn btn-copy" title="Копіювати текст"><i data-lucide="copy"></i> <span>Копіювати</span></button>',
-      '<button class="action-btn btn-pdf" title="Завантажити PDF звіт"><i data-lucide="file-text"></i> <span>PDF Звіт</span></button>',
-      '<button class="action-btn btn-html" title="Завантажити HTML сторінку"><i data-lucide="globe"></i> <span>HTML Звіт</span></button>'
+      '<button class="action-btn btn-copy" title="Copy to clipboard"><i data-lucide="copy"></i> <span>Copy</span></button>',
+      '<button class="action-btn btn-pdf" title="Download PDF report"><i data-lucide="file-text"></i> <span>PDF Report</span></button>',
+      '<button class="action-btn btn-html" title="Download HTML report"><i data-lucide="globe"></i> <span>HTML Report</span></button>'
     ].join('') });
     responseDiv.appendChild(actionBar);
     refreshIcons();
@@ -420,11 +420,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const clean = rawMarkdown.replace(/<div class="warning-box">[\s\S]*?<\/div>\n?/, '');
       navigator.clipboard.writeText(clean).then(() => {
         this.classList.add('success');
-        this.innerHTML = '<i data-lucide="check"></i> <span>Скопійовано</span>';
+        this.innerHTML = '<i data-lucide="check"></i> <span>Copied</span>';
         refreshIcons();
         setTimeout(() => {
           this.classList.remove('success');
-          this.innerHTML = '<i data-lucide="copy"></i> <span>Копіювати</span>';
+          this.innerHTML = '<i data-lucide="copy"></i> <span>Copy</span>';
           refreshIcons();
         }, 2000);
       }).catch(() => {
@@ -448,9 +448,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const suggestions = [
-      'Детальніше про джерела?',
-      'Скласти порівняльний підсумок',
-      'Які ключові тренди можна виділити?'
+      'Tell me more about the sources',
+      'Compare these findings',
+      'What are the key trends?'
     ];
     const pillsContainer = el('div', { className: 'prompt-pills' });
     suggestions.forEach(sug => {
@@ -476,25 +476,25 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!list) return;
     list.innerHTML = '';
     if (!sources || sources.length === 0) {
-      if (count) count.textContent = 'Знайдено 0 релевантних джерел.';
-      list.innerHTML = '<div class="empty-state"><p>Релевантних джерел не знайдено.</p></div>';
+      if (count) count.textContent = 'Found 0 relevant sources.';
+      list.innerHTML = '<div class="empty-state"><p>No relevant sources found.</p></div>';
       return;
     }
-    if (count) count.textContent = `Знайдено ${sources.length} релевантних джерел.`;
+    if (count) count.textContent = `Found ${sources.length} relevant sources.`;
     sources.forEach(src => {
       const id = src.id || src.source_id;
-      const title = src.title || 'Джерело';
+      const title = src.title || 'Source';
       const content = src.snippet || src.content || '';
       const score = src.relevance_score ? Math.round(src.relevance_score * 100) : 0;
       const card = el('div', { className: 'source-card', id: `card-${id}`, html: [
         '<div class="source-card-header">',
         `<span class="source-badge">[${escHtml(id)}]</span>`,
-        `<span class="source-score">Рел: ${score}%</span>`,
+        `<span class="source-score">Rel: ${score}%</span>`,
         '</div>',
         `<div class="source-card-title">${escHtml(title)}</div>`,
         `<div class="source-card-snippet">${escHtml(content)}</div>`,
         '<div class="source-card-footer">',
-        `<a href="${escHtml(src.url)}" target="_blank" rel="noopener" class="source-card-link"><span>Відкрити</span> <i data-lucide="external-link"></i></a>`,
+        `<a href="${escHtml(src.url)}" target="_blank" rel="noopener" class="source-card-link"><span>Open</span> <i data-lucide="external-link"></i></a>`,
         '</div>'
       ].join('') });
       list.appendChild(card);
@@ -522,10 +522,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     let used = usedTokens;
     if (used == null) used = Math.round(((100 - pct) / 100) * 128000);
-    const formatted = used < 100 ? '0к' : (used / 1000).toFixed(1) + 'к';
+    const formatted = used < 100 ? '0k' : (used / 1000).toFixed(1) + 'k';
     const indicator = _('context-memory-indicator');
     if (indicator) {
-      indicator.setAttribute('title', `Використано ${formatted} токенів із 128к`);
+      indicator.setAttribute('title', `Used ${formatted} tokens of 128k`);
       indicator.setAttribute('aria-valuenow', pct);
     }
   }
@@ -537,7 +537,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const text = _('status-text');
     if (!dot || !text) return;
     dot.className = 'status-dot ' + (online ? 'online' : 'offline');
-    text.textContent = online ? 'Система готова' : 'Тільки пошук (Без ШІ)';
+    text.textContent = online ? 'System Ready' : 'Search Only (LLM Offline)';
   }
 
   /* ═══ WELCOME TEXT ═══ */
@@ -545,7 +545,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return el('div', {
       className: 'welcome-text',
       id: 'welcome-text',
-      html: 'Привіт! Я <strong>AI Search</strong>, ваш дружній пошуковий асистент. Що ви шукаєте?'
+      html: 'Greetings. I am <strong>Venator</strong>. What topic shall we investigate today?'
     });
   }
 
@@ -563,10 +563,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
     
-    // Інші режими можуть бути додані тут (pentest, darknet, venator)
-    // Поки що вони працюють через стандартний агентський ендпоїнт /api/agent
-    // якщо режим не 'general'
-    
+    // Other modes (pentest, darknet, venator, pubmed)
     if (getCurrentMode() !== 'general') {
         appendUserMessage(text);
         promptInput.value = '';
@@ -588,9 +585,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const sl = _('sources-list');
     if (sl) sl.innerHTML = '<div class="loader-skeleton" style="margin-top:20px"><div class="skeleton-card"></div><div class="skeleton-card"></div></div>';
     const sc = _('sources-count');
-    if (sc) sc.textContent = 'Сканування та аналіз...';
+    if (sc) sc.textContent = 'Scanning and analyzing...';
 
     setOllamaStatus(true);
+
 
     const payload = {
       query: text,
@@ -788,7 +786,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!list) return;
       list.innerHTML = '';
       if (data.length === 0) {
-        list.innerHTML = '<div class="history-empty">Історія порожня</div>';
+        list.innerHTML = '<div class="history-empty">History is empty</div>';
         return;
       }
       data.forEach(item => {
@@ -796,7 +794,7 @@ document.addEventListener('DOMContentLoaded', () => {
         div.className = 'history-item' + (getHistoryId() === item.id ? ' active-item' : '');
         div.innerHTML = [
           `<span class="history-item-text">${escHtml(item.query)}</span>`,
-          '<button class="history-delete-btn" aria-label="Видалити"><i data-lucide="trash-2"></i></button>'
+          '<button class="history-delete-btn" aria-label="Delete"><i data-lucide="trash-2"></i></button>'
         ].join('');
         div.addEventListener('click', (e) => {
           if (e.target.closest('.history-delete-btn')) return;
@@ -806,7 +804,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (delBtn) {
           delBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            deleteHistoryItem(item.id);
+            if (confirm('Delete this research session?')) {
+              deleteHistoryItem(item.id);
+            }
           });
         }
         list.appendChild(div);
@@ -823,7 +823,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (wt) wt.remove();
     showThinking();
     const sc = _('sources-count');
-    if (sc) sc.textContent = 'Завантаження...';
+    if (sc) sc.textContent = 'Loading...';
 
     try {
       const res = await fetchWithAuth(`/api/history/${id}`);
@@ -860,7 +860,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function deleteHistoryItem(id) {
-    if (!confirm('Видалити?')) return;
     fetchWithAuth(`/api/history/${id}`, { method: 'DELETE' })
       .then(res => res.json())
       .then(data => {

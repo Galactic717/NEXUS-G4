@@ -265,6 +265,12 @@ def web_research(state: SummaryState, config: RunnableConfig):
             max_results=SEARCH_RESULTS_PER_LOOP,
             fetch_full_page=configurable.fetch_full_page,
         )
+    elif search_api == "pubmed":
+        from ollama_deep_researcher.utils import pubmed_search
+        search_results = pubmed_search(
+            state.search_query,
+            max_results=SEARCH_RESULTS_PER_LOOP,
+        )
     else:
         raise ValueError(f"Unsupported search API: {configurable.search_api}")
 

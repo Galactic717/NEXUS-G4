@@ -11,6 +11,7 @@ class SearchAPI(Enum):
     TAVILY = "tavily"
     DUCKDUCKGO = "duckduckgo"
     SEARXNG = "searxng"
+    PUBMED = "pubmed"
 
 
 class Configuration(BaseModel):
@@ -36,7 +37,7 @@ class Configuration(BaseModel):
         title="LLM Provider",
         description="Provider for the LLM (Ollama or LMStudio)",
     )
-    search_api: Literal["perplexity", "tavily", "duckduckgo", "searxng"] = Field(
+    search_api: Literal["perplexity", "tavily", "duckduckgo", "searxng", "pubmed"] = Field(
         default="duckduckgo", title="Search API", description="Web search API to use"
     )
     fetch_full_page: bool = Field(

@@ -1,56 +1,56 @@
-# Deep Researcher PRO: Enterprise Autonomous Search System
+# Venator: Autonomous Intelligence Engine
 
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![LangGraph](https://img.shields.io/badge/LangGraph-State_Machine-red.svg)](https://github.com/langchain-ai/langgraph)
+[![Biomedical](https://img.shields.io/badge/Domain-Biomedical_Research-green.svg)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**Deep Researcher PRO** — це передова система автономного дослідження, побудована на базі циклічних графів (LangGraph) та локальних LLM (Ollama). Вона імітує роботу аналітика-людини: шукає інформацію, аналізує її, знаходить прогалини в знаннях і проводить уточнюючі пошуки до повного вичерпання теми.
+**Venator** is an advanced autonomous research system engineered for deep information retrieval, technical analysis, and biomedical synthesis. Powered by **LangGraph** and local **LLMs (Gemma 4)**, it functions as an artificial analyst capable of multi-step reasoning, gap identification, and specialized data mining.
 
-## 🚀 Ключові особливості
+## 🚀 Key Features
 
-*   **Agentic Workflow (LangGraph):** Використання повноцінного державного автомата для керування циклом дослідження.
-*   **Агресивний Дата-Майнінг:** Кастомні промпти для витягування жорстких фактів, цифр та бенчмарків.
-*   **Multi-Provider Search:** Паралельний пошук через DuckDuckGo, Tavily, Google Search API, Shodan та Darknet (Tor).
-*   **Enterprise Reporting:** Генерація професійних PDF та HTML звітів з інтерактивними посиланнями та цитуванням джерел.
-*   **Privacy First:** Повна підтримка локальних моделей (Gemma 4, Llama 3) через Ollama.
-*   **Smart Retry Logic:** Автоматичне коригування пошукових запитів при нульових результатах.
+*   **Agentic Intelligence (LangGraph):** Employs a sophisticated state machine to manage complex research cycles, ensuring exhaustive coverage of topics.
+*   **Specialized Search Engines:**
+    *   **Biomedical:** Direct integration with **NCBI PubMed** for peer-reviewed medical research.
+    *   **OSINT:** Deep people search and registry analysis.
+    *   **Cybersecurity:** Integrated **Shodan** and **Darknet (Tor)** search capabilities.
+    *   **Technical:** Parallel querying across Google, DuckDuckGo, and Tavily with stealth-bypass technology.
+*   **Enterprise Reporting:** Generates professional-grade analytical reports with verifiable citations and structured synthesis.
+*   **Venator Browser:** A custom headless browser controller for bypassing Cloudflare and collecting deep-page data (HTML, screenshots, state).
+*   **Privacy-First:** Optimized for high-performance local execution using **Ollama** and **Gemma 4**.
 
-## 🛠 Технологічний стек
+## 🛠 Technology Stack
 
 *   **Backend:** FastAPI, Python 3.11+
 *   **AI Framework:** LangChain, LangGraph
-*   **Database:** SQLite + SQLAlchemy (з підтримкою retry-механізмів для високого навантаження)
-*   **Frontend:** Vanilla JS (Premium Glassmorphism UI), Lucide Icons
-*   **OSINT Tools:** Tor Proxy, Shodan API, Jina Reader bypass
+*   **Search Protocols:** Entrez (PubMed), Shodan API, Tor Proxy, Jina Reader.
+*   **Data Handling:** SQLAlchemy with high-concurrency retry logic.
+*   **Frontend:** Premium Glassmorphism UI (Vanilla JS & React).
 
-## 📦 Встановлення та запуск
+## 📦 Quick Start
 
-1.  **Клонуйте репозиторій:**
+1.  **Clone & Setup:**
     ```bash
-    git clone https://github.com/your-username/Deep_Researcher_PRO.git
-    cd Deep_Researcher_PRO
-    ```
-
-2.  **Налаштуйте середовище:**
-    ```bash
+    git clone https://github.com/your-username/Venator.git
+    cd Venator
     python -m venv .venv
     .\.venv\Scripts\activate
     pip install -r requirements.txt
     ```
 
-3.  **Конфігурація:** Скопіюйте `.env.example` у `.env` та додайте свої ключі (Tavily, Shodan).
+2.  **Configuration:** Configure `.env` with your API keys (PubMed/Entrez email, Shodan, etc.).
 
-4.  **Запуск:**
+3.  **Launch:**
     ```bash
     python run_app.py
     ```
 
-## 📊 Презентація для інженерів
+## 📊 Technical Presentation
 
-Проект демонструє глибоке розуміння **Agentic AI**:
-1.  **Циклічне мислення:** Система не просто відповідає на запит, а будує план дослідження.
-2.  **Валідація джерел:** Автоматичне оцінювання релевантності кожного знайденого сайту (Scoring Algorithm).
-3.  **Стійкість:** Реалізовано обхід Cloudflare через Stealth-заголовки та Jina Reader.
+Venator demonstrates proficiency in:
+1.  **Stateful Multi-Agent Systems:** Handling long-running research loops without state drift.
+2.  **Specialized Data Acquisition:** Fetching and processing data from non-standard sources (Darknet, PubMed).
+3.  **Advanced RAG:** Local vector memory for session-long context persistence.
 
 ---
-*Розроблено як демонстрація можливостей сучасних AI-агентів у сфері інформаційної безпеки та технічного аналізу.*
+*Developed by Гліб Сергійович Степанов as a demonstration of next-generation autonomous research agents.*

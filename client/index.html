@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="uk" data-theme="amethyst" data-depth="0" data-search-only="false">
+<html lang="en" data-theme="amethyst" data-depth="0" data-search-only="false">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="AI Search — інтелектуальна пошукова система з AI-агентом на базі найсучасніших мовних моделей.">
+  <meta name="description" content="Venator — Advanced autonomous research platform powered by agentic AI and local LLMs.">
   <meta name="theme-color" content="#07050d">
   <meta name="color-scheme" content="dark">
-  <meta property="og:title" content="AI Search | Розумний Пошук">
-  <meta property="og:description" content="Інтелектуальна пошукова система з AI-агентом. Аналізуйте, знаходьте та синтезуйте інформацію з надійних джерел.">
+  <meta property="og:title" content="Venator | Autonomous Intelligence">
+  <meta property="og:description" content="State-of-the-art research engine for technical and biomedical analysis.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="/static/og-image.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,38 +15,38 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest" defer></script>
   <link rel="stylesheet" href="/static/index.css?v=16">
-  <title>AI Search | Розумний Пошук</title>
+  <title>Venator | Autonomous Intelligence</title>
 </head>
 <body>
-  <div class="app-layout" id="app-layout" role="application" aria-label="AI Search Application">
+  <div class="app-layout" id="app-layout" role="application" aria-label="Venator Application">
 
     <!-- ═══ SIDEBAR ═══ -->
-    <aside class="sidebar" id="sidebar" role="navigation" aria-label="Бічна панель навігації">
+    <aside class="sidebar" id="sidebar" role="navigation" aria-label="Navigation Sidebar">
       <div class="sidebar-header">
         <div class="brand">
           <span class="brand-icon" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
           </span>
-          <span class="brand-text">AI<span class="brand-highlight">Search</span></span>
+          <span class="brand-text">Vena<span class="brand-highlight">tor</span></span>
         </div>
       </div>
 
-      <button class="new-chat-btn" id="new-chat-btn" type="button" aria-label="Почати новий чат">
-        <span class="new-chat-label">Новий чат</span>
+      <button class="new-chat-btn" id="new-chat-btn" type="button" aria-label="Start New Chat">
+        <span class="new-chat-label">New Research</span>
         <i data-lucide="edit" aria-hidden="true"></i>
       </button>
 
       <div class="nav-section">
         <div class="nav-item">
-          <span class="nav-item-label" id="depth-label">Глибина пошуку</span>
+          <span class="nav-item-label" id="depth-label">Research Depth</span>
           <div class="toggle-group" role="radiogroup" aria-labelledby="depth-label">
-            <button class="depth-btn active" data-depth="0" role="radio" aria-checked="true" type="button">Швидкий</button>
-            <button class="depth-btn" data-depth="2" role="radio" aria-checked="false" type="button">Глибокий</button>
+            <button class="depth-btn active" data-depth="0" role="radio" aria-checked="true" type="button">Quick</button>
+            <button class="depth-btn" data-depth="2" role="radio" aria-checked="false" type="button">Deep</button>
           </div>
         </div>
 
         <label class="nav-item nav-checkbox">
-          <span class="nav-item-label">Тільки джерела</span>
+          <span class="nav-item-label">Sources Only</span>
           <div class="checkbox-wrap">
             <input type="checkbox" id="search-only-check">
             <span class="checkbox-visual" aria-hidden="true"></span>
@@ -56,43 +56,43 @@
 
       <div class="nav-section history-section">
         <div class="nav-section-title">
-          <span>Історія пошуку</span>
+          <span>History</span>
           <span class="badge" id="history-count" aria-live="polite">0</span>
         </div>
-        <div id="history-list" class="history-container" role="list" aria-label="Історія пошукових запитів">
-          <div class="history-empty">Порожньо</div>
+        <div id="history-list" class="history-container" role="list" aria-label="Search History">
+          <div class="history-empty">No history</div>
         </div>
       </div>
 
       <footer class="sidebar-footer">
-        <span class="footer-text">Проект з дисципліни "Веб Технології"</span>
-        <span class="footer-version">КНУ ім. Тараса Шевченка</span>
+        <span class="footer-text">Autonomous Research Engine</span>
+        <span class="footer-version">v2.0.0 "Gemma Core"</span>
       </footer>
     </aside>
 
-    <div class="resizer" id="left-resizer" role="separator" tabindex="0" aria-label="Змінити ширину бічної панелі" aria-orientation="vertical"></div>
+    <div class="resizer" id="left-resizer" role="separator" tabindex="0" aria-label="Resize sidebar" aria-orientation="vertical"></div>
 
     <!-- ═══ MAIN CHAT ═══ -->
-    <main class="chat-area" id="chat-area" role="main" aria-label="Область чату">
+    <main class="chat-area" id="chat-area" role="main" aria-label="Chat Area">
       <header class="chat-header">
-        <button class="sidebar-toggle-btn" id="sidebar-toggle-btn" type="button" title="Сховати бічну панель" aria-label="Сховати бічну панель">
+        <button class="sidebar-toggle-btn" id="sidebar-toggle-btn" type="button" title="Toggle Sidebar" aria-label="Toggle Sidebar">
           <i data-lucide="panel-left-close" aria-hidden="true"></i>
         </button>
-        <button class="zen-btn" id="zen-btn" type="button" title="Режим фокусування (Zen Mode)" aria-label="Увімкнути режим фокусування">
+        <button class="zen-btn" id="zen-btn" type="button" title="Zen Mode" aria-label="Toggle Zen Mode">
           <i data-lucide="maximize-2" aria-hidden="true"></i>
         </button>
-        <button class="serif-btn" id="serif-btn" type="button" title="Перемкнути шрифт відповідей" aria-label="Перемкнути шрифт відповідей">
+        <button class="serif-btn" id="serif-btn" type="button" title="Toggle Font" aria-label="Toggle Font">
           <i data-lucide="type" aria-hidden="true"></i>
         </button>
 
         <div class="status-pill" id="ollama-status" role="status" aria-live="polite">
           <span class="status-dot online" id="status-dot" aria-hidden="true"></span>
-          <span class="status-text" id="status-text">Система готова</span>
+          <span class="status-text" id="status-text">System Ready</span>
         </div>
 
-        <div class="context-indicator" id="context-memory-indicator" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" title="Використано 0к токенів із 128к" tabindex="0">
+        <div class="context-indicator" id="context-memory-indicator" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" title="Used 0k tokens of 128k" tabindex="0">
           <i data-lucide="brain" aria-hidden="true"></i>
-          <span class="context-label">Пам'ять:</span>
+          <span class="context-label">Memory:</span>
           <div class="context-track">
             <div class="context-fill" id="context-bar-fill" style="width:100%"></div>
           </div>
@@ -100,19 +100,19 @@
         </div>
       </header>
 
-      <div class="chat-messages" id="chat-messages" role="log" aria-label="Повідомлення чату" aria-live="off">
+      <div class="chat-messages" id="chat-messages" role="log" aria-label="Chat messages" aria-live="off">
         <div class="welcome-text" id="welcome-text">
-          Привіт! Я <strong>AI Search</strong>, ваш дружній пошуковий асистент. Що ви шукаєте?
+          Greetings. I am <strong>Venator</strong>. What topic shall we investigate today?
         </div>
       </div>
 
       <div class="input-area">
-        <!-- Режими пошуку -->
+        <!-- Search Modes -->
         <div id="mode-selector" class="mode-selector">
             <button class="mode-btn active" data-mode="general">General</button>
-            <button class="mode-btn mode-nexus" data-mode="nexus">🌀 Unified Nexus</button>
+            <button class="mode-btn mode-nexus" data-mode="nexus">🌀 Bio-Nexus</button>
+            <button class="mode-btn" data-mode="pubmed">Medical (PubMed)</button>
             <button class="mode-btn" data-mode="people">People OSINT</button>
-            <button class="mode-btn" data-mode="pentest">Penetration Test</button>
             <button class="mode-btn" data-mode="darknet">Darknet</button>
             <button class="mode-btn" data-mode="venator">Venator Browser</button>
         </div>
@@ -123,12 +123,12 @@
             <textarea
               id="prompt-input"
               class="prompt-input"
-              placeholder="Запитайте AI Search..."
+              placeholder="Enter research topic..."
               rows="1"
-              aria-label="Введіть ваш запит"
+              aria-label="Enter your query"
               enterkeyhint="send"
             ></textarea>
-            <button class="send-btn" id="send-btn" type="submit" disabled aria-label="Відправити запит">
+            <button class="send-btn" id="send-btn" type="submit" disabled aria-label="Send Query">
               <i data-lucide="arrow-up" aria-hidden="true"></i>
             </button>
           </div>
@@ -139,20 +139,20 @@
     <div class="resizer" id="right-resizer" role="separator" tabindex="0" aria-label="Змінити ширину панелі інформації" aria-orientation="vertical"></div>
 
     <!-- ═══ RIGHT PANEL ═══ -->
-    <aside class="right-panel" id="right-panel" role="complementary" aria-label="Панель інформації">
-      <nav class="panel-tabs" role="tablist" aria-label="Вкладки панелі">
-        <button class="panel-tab active" role="tab" aria-selected="true" data-target="tab-info" type="button"><i data-lucide="info" aria-hidden="true"></i> Інфо</button>
-        <button class="panel-tab" role="tab" aria-selected="false" data-target="tab-sources" id="tab-sources-selector" type="button"><i data-lucide="link-2" aria-hidden="true"></i> Джерела</button>
-        <button class="panel-tab" role="tab" aria-selected="false" data-target="tab-graph" id="tab-graph-selector" type="button"><i data-lucide="share-2" aria-hidden="true"></i> Граф</button>
-        <button class="panel-tab" role="tab" aria-selected="false" data-target="tab-news" type="button"><i data-lucide="newspaper" aria-hidden="true"></i> Новини AI</button>
+    <aside class="right-panel" id="right-panel" role="complementary" aria-label="Info Panel">
+      <nav class="panel-tabs" role="tablist" aria-label="Panel Tabs">
+        <button class="panel-tab active" role="tab" aria-selected="true" data-target="tab-info" type="button"><i data-lucide="info" aria-hidden="true"></i> Info</button>
+        <button class="panel-tab" role="tab" aria-selected="false" data-target="tab-sources" id="tab-sources-selector" type="button"><i data-lucide="link-2" aria-hidden="true"></i> Sources</button>
+        <button class="panel-tab" role="tab" aria-selected="false" data-target="tab-graph" id="tab-graph-selector" type="button"><i data-lucide="share-2" aria-hidden="true"></i> Graph</button>
+        <button class="panel-tab" role="tab" aria-selected="false" data-target="tab-news" type="button"><i data-lucide="newspaper" aria-hidden="true"></i> AI News</button>
       </nav>
 
       <!-- TAB: INFO -->
-      <section class="panel-content" id="tab-info" role="tabpanel" aria-label="Інформація про проект">
+      <section class="panel-content" id="tab-info" role="tabpanel" aria-label="Project Information">
         <div class="card card-themes">
-          <h3 class="card-title"><i data-lucide="palette" aria-hidden="true" style="width:14px;height:14px;display:inline-block;vertical-align:middle;margin-right:6px;"></i> Персоналізація</h3>
-          <p class="card-desc">Оберіть фірмовий стиль робочого простору:</p>
-          <div class="theme-grid" role="radiogroup" aria-label="Вибір теми">
+          <h3 class="card-title"><i data-lucide="palette" aria-hidden="true" style="width:14px;height:14px;display:inline-block;vertical-align:middle;margin-right:6px;"></i> Personalization</h3>
+          <p class="card-desc">Select your workspace style:</p>
+          <div class="theme-grid" role="radiogroup" aria-label="Theme selection">
             <button class="theme-chip active" data-theme="amethyst" role="radio" aria-checked="true" type="button" style="--chip-color:#a855f7"><span class="chip-dot"></span>Amethyst</button>
             <button class="theme-chip" data-theme="emerald" role="radio" aria-checked="false" type="button" style="--chip-color:#10b981"><span class="chip-dot"></span>Emerald</button>
             <button class="theme-chip" data-theme="nebula" role="radio" aria-checked="false" type="button" style="--chip-color:#3b82f6"><span class="chip-dot"></span>Nebula</button>
@@ -161,61 +161,61 @@
           </div>
         </div>
 
-        <h2 class="panel-title">Про проект</h2>
-        <p class="panel-desc">NEXUS-G4 — це автономна пошуково-аналітична система, створена для глибокого дослідження інформації без обмежень. Індивідуальний інженерний проект з використанням uncensored моделі Gemma 4.</p>
+        <h2 class="panel-title">About Venator</h2>
+        <p class="panel-desc">Venator is an autonomous research system engineered for deep investigative analysis. It utilizes LangGraph state machines and local LLMs (Gemma 4) to navigate complex data landscapes.</p>
 
         <div class="uni-badge">
           <i data-lucide="shield-alert" aria-hidden="true"></i>
           <span>Unrestricted Intelligence Core</span>
         </div>
 
-        <h3 class="section-heading">Приклади запитів:</h3>
+        <h3 class="section-heading">Example Queries:</h3>
         <ul class="examples-list">
-          <li tabindex="0" role="button" data-prompt="Останні новини про OpenAI">Дізнайтеся про лідерів ринку. Спробуйте <strong>"Останні новини про OpenAI"</strong></li>
-          <li tabindex="0" role="button" data-prompt="Що нового у розвитку мовних моделей?">Відслідковуйте тренди. Спробуйте <strong>"Що нового у розвитку мовних моделей?"</strong></li>
-          <li tabindex="0" role="button" data-prompt="Реліз Gemma 4 від Google">Знайдіть конкретні релізи. Спробуйте <strong>"Реліз Gemma 4 від Google"</strong></li>
+          <li tabindex="0" role="button" data-prompt="Latest breakthroughs in protein folding prediction">Analyze Biotech. Try <strong>"Latest breakthroughs in protein folding prediction"</strong></li>
+          <li tabindex="0" role="button" data-prompt="Current SOTA for long-context LLMs">Track Trends. Try <strong>"Current SOTA for long-context LLMs"</strong></li>
+          <li tabindex="0" role="button" data-prompt="Vulnerabilities in modern biometric systems">OSINT/Security. Try <strong>"Vulnerabilities in modern biometric systems"</strong></li>
         </ul>
 
-        <h3 class="section-heading" style="margin-top:24px;">Можливості системи:</h3>
+        <h3 class="section-heading" style="margin-top:24px;">Core Capabilities:</h3>
         <div class="feature-cards">
-          <div class="feature-card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=600&auto=format&fit=crop')"></div><div class="card-body"><h3>AI-агент на базі Gemma4</h3><p>Розумний асистент, який самостійно сканує інтернет та шукає найсвіжішу інформацію про штучний інтелект.</p></div></div>
-          <div class="feature-card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1633412802994-5c058f151b66?q=80&w=600&auto=format&fit=crop')"></div><div class="card-body"><h3>Актуальні новини та база даних</h3><p>Шукайте статті за вашим запитом. Усі знайдені матеріали автоматично зберігаються в локальну базу даних.</p></div></div>
-          <div class="feature-card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=600&auto=format&fit=crop')"></div><div class="card-body"><h3>Розумна стрічка та фільтрація</h3><p>Переглядайте останні 20 новин, відсортованих за датою. Легко фільтруйте матеріали за конкретним джерелом.</p></div></div>
-          <div class="feature-card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600&auto=format&fit=crop')"></div><div class="card-body"><h3>Відповіді з першоджерел</h3><p>Задавайте будь-які питання та отримуйте розгорнуту відповідь від AI разом зі списком використаних посилань.</p></div></div>
+          <div class="feature-card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=600&auto=format&fit=crop')"></div><div class="card-body"><h3>Agentic Reasoning</h3><p>Autonomous loop-based research that identifies gaps and refines searches until the topic is exhausted.</p></div></div>
+          <div class="feature-card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1633412802994-5c058f151b66?q=80&w=600&auto=format&fit=crop')"></div><div class="card-body"><h3>Multi-Domain Search</h3><p>Integrated access to PubMed, Shodan, Darknet, and standard web sources with stealth bypass.</p></div></div>
+          <div class="feature-card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=600&auto=format&fit=crop')"></div><div class="card-body"><h3>Local Privacy</h3><p>Runs entirely on your hardware. No data leaks, no cloud restrictions, full control over your intelligence.</p></div></div>
+          <div class="feature-card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600&auto=format&fit=crop')"></div><div class="card-body"><h3>Structured Synthesis</h3><p>Transforms raw internet data into professional technical reports with verifiable citations.</p></div></div>
         </div>
       </section>
 
       <!-- TAB: SOURCES -->
-      <section class="panel-content hidden" id="tab-sources" role="tabpanel" aria-label="Джерела інформації">
+      <section class="panel-content hidden" id="tab-sources" role="tabpanel" aria-label="Research Sources">
         <div class="panel-header-with-actions">
-          <h2 class="panel-title">Джерела інформації</h2>
-          <!-- Кнопки експорту -->
+          <h2 class="panel-title">Intelligence Sources</h2>
+          <!-- Export Buttons -->
           <div id="export-buttons" class="export-buttons">
-              <button class="export-btn" title="Експорт в JSON" onclick="exportJSON()"><i data-lucide="file-json"></i></button>
-              <button class="export-btn" title="Експорт в CSV" onclick="exportCSV()"><i data-lucide="file-spreadsheet"></i></button>
-              <button class="export-btn" title="Експорт в DOCX" onclick="exportDOCX()"><i data-lucide="file-text"></i></button>
+              <button class="export-btn" title="Export to JSON" onclick="exportJSON()"><i data-lucide="file-json"></i></button>
+              <button class="export-btn" title="Export to CSV" onclick="exportCSV()"><i data-lucide="file-spreadsheet"></i></button>
+              <button class="export-btn" title="Export to DOCX" onclick="exportDOCX()"><i data-lucide="file-text"></i></button>
           </div>
         </div>
-        <p class="panel-desc" id="sources-count">Знайдено 0 релевантних джерел.</p>
+        <p class="panel-desc" id="sources-count">Found 0 relevant sources.</p>
         <div id="sources-list" class="sources-container"></div>
       </section>
 
       <!-- TAB: GRAPH -->
-      <section class="panel-content hidden" id="tab-graph" role="tabpanel" aria-label="Граф зв'язків">
-          <h2 class="panel-title">Граф зв'язків</h2>
-          <p class="panel-desc">Візуалізація знайдених OSINT-об'єктів та їх взаємозв'язків.</p>
+      <section class="panel-content hidden" id="tab-graph" role="tabpanel" aria-label="Connection Graph">
+          <h2 class="panel-title">Nexus Graph</h2>
+          <p class="panel-desc">Visualizing connections between discovered entities and research nodes.</p>
           <div id="graph-container" class="graph-container">
-            <div class="graph-placeholder">Натисніть на об'єкт, щоб побачити зв'язки</div>
+            <div class="graph-placeholder">Click on an entity to explore connections</div>
           </div>
       </section>
 
       <!-- TAB: NEWS -->
-      <section class="panel-content hidden" id="tab-news" role="tabpanel" aria-label="Стрічка новин">
+      <section class="panel-content hidden" id="tab-news" role="tabpanel" aria-label="AI News Feed">
         <div class="news-header">
-          <h2 class="news-title-heading">Стрічка новин</h2>
-          <button id="refresh-news-btn" class="icon-btn" type="button" title="Оновити стрічку" aria-label="Оновити стрічку новин"><i data-lucide="refresh-cw" aria-hidden="true"></i></button>
+          <h2 class="news-title-heading">Live Intelligence Feed</h2>
+          <button id="refresh-news-btn" class="icon-btn" type="button" title="Refresh Feed" aria-label="Refresh news feed"><i data-lucide="refresh-cw" aria-hidden="true"></i></button>
         </div>
-        <div id="news-feed-container" class="news-feed" role="feed" aria-label="Новини штучного інтелекту">
+        <div id="news-feed-container" class="news-feed" role="feed" aria-label="AI News Feed">
           <div class="loader-skeleton"><div class="skeleton-card"></div><div class="skeleton-card"></div><div class="skeleton-card"></div></div>
         </div>
       </section>
@@ -224,19 +224,19 @@
 
   </div>
 
-  <!-- Мобільна навігація (видима тільки на мобільних пристроях) -->
-  <nav class="mobile-nav-bar" id="mobile-nav-bar" aria-label="Мобільна навігація">
-    <button class="mobile-nav-item active" data-view="chat" type="button" aria-label="Чат">
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav-bar" id="mobile-nav-bar" aria-label="Mobile Navigation">
+    <button class="mobile-nav-item active" data-view="chat" type="button" aria-label="Chat">
       <i data-lucide="message-square" aria-hidden="true"></i>
-      <span>Чат</span>
+      <span>Chat</span>
     </button>
-    <button class="mobile-nav-item" data-view="sidebar" type="button" aria-label="Історія та налаштування">
+    <button class="mobile-nav-item" data-view="sidebar" type="button" aria-label="Menu">
       <i data-lucide="history" aria-hidden="true"></i>
-      <span>Меню & Історія</span>
+      <span>Menu</span>
     </button>
-    <button class="mobile-nav-item" data-view="panel" type="button" aria-label="Джерела та новини">
+    <button class="mobile-nav-item" data-view="panel" type="button" aria-label="Intel">
       <i data-lucide="layout" aria-hidden="true"></i>
-      <span>Джерела & Новини</span>
+      <span>Intel</span>
     </button>
   </nav>
 
